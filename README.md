@@ -1,6 +1,6 @@
 # nvim config
 
-This is a fork of the great Spf13-vim distribution. It targets mainly on Neovim and uses Plug-vim as plugin manager.
+This is a fork of the great Spf13-vim distribution. It targets mainly on Neovim and uses vim-plug as plugin manager.
 
 
 ## License
