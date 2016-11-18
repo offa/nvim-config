@@ -146,7 +146,7 @@
                 Plug 'vim-scripts/restore_view.vim'
             endif
             Plug 'mhinz/vim-signify'
-            Plug 'tpope/vim-abolish.git'
+            Plug 'tpope/vim-abolish'
             Plug 'osyo-manga/vim-over'
             Plug 'kana/vim-textobj-user'
             Plug 'kana/vim-textobj-indent'
