@@ -1,32 +1,37 @@
 " Modeline and Notes {
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
-"                    __ _ _____              _
-"         ___ _ __  / _/ |___ /      __   __(_)_ __ ___
-"        / __| '_ \| |_| | |_ \ _____\ \ / /| | '_ ` _ \
-"        \__ \ |_) |  _| |___) |_____|\ V / | | | | | | |
-"        |___/ .__/|_| |_|____/        \_/  |_|_| |_| |_|
-"            |_|
+" Copyright 2016 offa
 "
-"   This is the personal .vimrc file of Steve Francia.
-"   While much of it is beneficial for general use, I would
-"   recommend picking out the parts you want and understand.
+" Licensed under the Apache License, Version 2.0 (the "License");
+" you may not use this file except in compliance with the License.
+" You may obtain a copy of the License at
 "
-"   You can find me at http://spf13.com
+"     http://www.apache.org/licenses/LICENSE-2.0
 "
-"   Copyright 2014 Steve Francia
+" Unless required by applicable law or agreed to in writing, software
+" distributed under the License is distributed on an "AS IS" BASIS,
+" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+" See the License for the specific language governing permissions and
+" limitations under the License.
 "
-"   Licensed under the Apache License, Version 2.0 (the "License");
-"   you may not use this file except in compliance with the License.
-"   You may obtain a copy of the License at
 "
-"       http://www.apache.org/licenses/LICENSE-2.0
+" This file incorporates work covered by the following copyright and
+" permission notice:
 "
-"   Unless required by applicable law or agreed to in writing, software
-"   distributed under the License is distributed on an "AS IS" BASIS,
-"   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-"   See the License for the specific language governing permissions and
-"   limitations under the License.
+"      Copyright 2014 Steve Francia
+"
+"      Licensed under the Apache License, Version 2.0 (the "License");
+"      you may not use this file except in compliance with the License.
+"      You may obtain a copy of the License at
+"
+"          http://www.apache.org/licenses/LICENSE-2.0
+"
+"      Unless required by applicable law or agreed to in writing, software
+"      distributed under the License is distributed on an "AS IS" BASIS,
+"      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+"      See the License for the specific language governing permissions and
+"      limitations under the License.
 " }
 
 " Environment {
@@ -57,7 +62,7 @@
           set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
         endif
     " }
-    
+
     " Arrow Key Fix {
         " https://github.com/spf13/spf13-vim/issues/780
         if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
@@ -177,7 +182,7 @@
 
 " Vim UI {
 
-    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/plugged/vim-colors-solarized/colors/solarized.vim"))
         let g:solarized_termcolors=256
         let g:solarized_termtrans=1
         let g:solarized_contrast="normal"
@@ -504,17 +509,17 @@
     " }
 
     " PIV {
-        if isdirectory(expand("~/.vim/bundle/PIV"))
+        if isdirectory(expand("~/.vim/plugged/PIV"))
             let g:DisableAutoPHPFolding = 0
             let g:PIVAutoClose = 0
         endif
     " }
 
     " Misc {
-        if isdirectory(expand("~/.vim/bundle/nerdtree"))
+        if isdirectory(expand("~/.vim/plugged/nerdtree"))
             let g:NERDShutUp=1
         endif
-        if isdirectory(expand("~/.vim/bundle/matchit.zip"))
+        if isdirectory(expand("~/.vim/plugged/matchit.zip"))
             let b:match_ignorecase = 1
         endif
     " }
@@ -573,7 +578,7 @@
     " }
 
     " NerdTree {
-        if isdirectory(expand("~/.vim/bundle/nerdtree"))
+        if isdirectory(expand("~/.vim/plugged/nerdtree"))
             map <C-e> <plug>NERDTreeTabsToggle<CR>
             map <leader>e :NERDTreeFind<CR>
             nmap <leader>nt :NERDTreeFind<CR>
@@ -590,7 +595,7 @@
     " }
 
     " Tabularize {
-        if isdirectory(expand("~/.vim/bundle/tabular"))
+        if isdirectory(expand("~/.vim/plugged/tabular"))
             nmap <Leader>a& :Tabularize /&<CR>
             vmap <Leader>a& :Tabularize /&<CR>
             nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
@@ -612,7 +617,7 @@
 
     " Session List {
         set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-        if isdirectory(expand("~/.vim/bundle/sessionman.vim/"))
+        if isdirectory(expand("~/.vim/plugged/sessionman.vim/"))
             nmap <leader>sl :SessionList<CR>
             nmap <leader>ss :SessionSave<CR>
             nmap <leader>sc :SessionClose<CR>
@@ -630,7 +635,7 @@
             let g:pymode = 0
         endif
 
-        if isdirectory(expand("~/.vim/bundle/python-mode"))
+        if isdirectory(expand("~/.vim/plugged/python-mode"))
             let g:pymode_lint_checkers = ['pyflakes']
             let g:pymode_trim_whitespaces = 0
             let g:pymode_options = 0
@@ -639,7 +644,7 @@
     " }
 
     " ctrlp {
-        if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
+        if isdirectory(expand("~/.vim/plugged/ctrlp.vim/"))
             let g:ctrlp_working_path_mode = 'ra'
             nnoremap <silent> <D-t> :CtrlP<CR>
             nnoremap <silent> <D-r> :CtrlPMRU<CR>
@@ -670,7 +675,7 @@
                 \ 'fallback': s:ctrlp_fallback
             \ }
 
-            if isdirectory(expand("~/.vim/bundle/ctrlp-funky/"))
+            if isdirectory(expand("~/.vim/plugged/ctrlp-funky/"))
                 " CtrlP extensions
                 let g:ctrlp_extensions = ['funky']
 
@@ -681,19 +686,19 @@
     "}
 
     " TagBar {
-        if isdirectory(expand("~/.vim/bundle/tagbar/"))
+        if isdirectory(expand("~/.vim/plugged/tagbar/"))
             nnoremap <silent> <leader>tt :TagbarToggle<CR>
         endif
     "}
 
     " Rainbow {
-        if isdirectory(expand("~/.vim/bundle/rainbow/"))
+        if isdirectory(expand("~/.vim/plugged/rainbow/"))
             let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
         endif
     "}
 
     " Fugitive {
-        if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+        if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
             nnoremap <silent> <leader>gs :Gstatus<CR>
             nnoremap <silent> <leader>gd :Gdiff<CR>
             nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -751,28 +756,29 @@
         endif
     " }
 
-    " neocomplete {
-        if count(g:spf13_bundle_groups, 'neocomplete')
+    " deoplete {
+        if count(g:spf13_bundle_groups, 'deoplete')
+
             let g:acp_enableAtStartup = 0
-            let g:neocomplete#enable_at_startup = 1
-            let g:neocomplete#enable_smart_case = 1
-            let g:neocomplete#enable_auto_delimiter = 1
-            let g:neocomplete#max_list = 15
-            let g:neocomplete#force_overwrite_completefunc = 1
+            let g:deoplete#enable_at_startup = 1
+            let g:deoplete#enable_smart_case = 1
+            let g:deoplete#enable_auto_delimiter = 1
+            let g:deoplete#max_list = 15
+            let g:deoplete#force_overwrite_completefunc = 1
 
 
             " Define dictionary.
-            let g:neocomplete#sources#dictionary#dictionaries = {
+            let g:deoplete#sources#dictionary#dictionaries = {
                         \ 'default' : '',
                         \ 'vimshell' : $HOME.'/.vimshell_hist',
                         \ 'scheme' : $HOME.'/.gosh_completions'
                         \ }
 
             " Define keyword.
-            if !exists('g:neocomplete#keyword_patterns')
-                let g:neocomplete#keyword_patterns = {}
+            if !exists('g:deoplete#keyword_patterns')
+                let g:deoplete#keyword_patterns = {}
             endif
-            let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+            let g:deoplete#keyword_patterns['default'] = '\h\w*'
 
             " Plugin key-mappings {
                 " These two lines conflict with the default digraph mapping of <C-K>
@@ -800,21 +806,21 @@
                                 \ "\<C-e>" : "\<Plug>(neosnippet_expand_or_jump)")
                     smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
 
-                    inoremap <expr><C-g> neocomplete#undo_completion()
-                    inoremap <expr><C-l> neocomplete#complete_common_string()
-                    "inoremap <expr><CR> neocomplete#complete_common_string()
+                    inoremap <expr><C-g> deoplete#undo_completion()
+                    inoremap <expr><C-l> deoplete#complete_common_string()
+                    "inoremap <expr><CR> deoplete#complete_common_string()
 
                     " <CR>: close popup
                     " <s-CR>: close popup and save indent.
-                    inoremap <expr><s-CR> pumvisible() ? neocomplete#smart_close_popup()."\<CR>" : "\<CR>"
+                    inoremap <expr><s-CR> pumvisible() ? deoplete#smart_close_popup()."\<CR>" : "\<CR>"
 
                     function! CleverCr()
                         if pumvisible()
                             if neosnippet#expandable()
                                 let exp = "\<Plug>(neosnippet_expand)"
-                                return exp . neocomplete#smart_close_popup()
+                                return exp . deoplete#smart_close_popup()
                             else
-                                return neocomplete#smart_close_popup()
+                                return deoplete#smart_close_popup()
                             endif
                         else
                             return "\<CR>"
@@ -824,8 +830,8 @@
                     " <CR> close popup and save indent or expand snippet
                     imap <expr> <CR> CleverCr()
                     " <C-h>, <BS>: close popup and delete backword char.
-                    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-                    inoremap <expr><C-y> neocomplete#smart_close_popup()
+                    inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+                    inoremap <expr><C-y> deoplete#smart_close_popup()
                 endif
                 " <TAB>: completion.
                 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -847,7 +853,7 @@
                         if neosnippet#expandable_or_jumpable()
                             return "\<Plug>(neosnippet_expand_or_jump)"
                         else
-                            return neocomplete#start_manual_complete()
+                            return deoplete#mappings#manual_complete()
                         endif
                     endif
                 endfunction
@@ -856,14 +862,14 @@
             " }
 
             " Enable heavy omni completion.
-            if !exists('g:neocomplete#sources#omni#input_patterns')
-                let g:neocomplete#sources#omni#input_patterns = {}
+            if !exists('g:deoplete#sources#omni#input_patterns')
+                let g:deoplete#sources#omni#input_patterns = {}
             endif
-            let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-            let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-            let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-            let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-            let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+            let g:deoplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+            let g:deoplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+            let g:deoplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+            let g:deoplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+            let g:deoplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
     " }
     " neocomplcache {
         elseif count(g:spf13_bundle_groups, 'neocomplcache')
@@ -983,10 +989,10 @@
 
     " Snippets {
         if count(g:spf13_bundle_groups, 'neocomplcache') ||
-                    \ count(g:spf13_bundle_groups, 'neocomplete')
+                    \ count(g:spf13_bundle_groups, 'deoplete')
 
             " Use honza's snippets.
-            let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+            let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 
             " Enable neosnippet snipmate compatibility mode
             let g:neosnippet#enable_snipmate_compatibility = 1
@@ -1017,7 +1023,7 @@
     endif
 
     " UndoTree {
-        if isdirectory(expand("~/.vim/bundle/undotree/"))
+        if isdirectory(expand("~/.vim/plugged/undotree/"))
             nnoremap <Leader>u :UndotreeToggle<CR>
             " If undotree is opened, it is likely one wants to interact with it.
             let g:undotree_SetFocusWhenToggle=1
@@ -1025,7 +1031,7 @@
     " }
 
     " indent_guides {
-        if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+        if isdirectory(expand("~/.vim/plugged/vim-indent-guides/"))
             let g:indent_guides_start_level = 2
             let g:indent_guides_guide_size = 1
             let g:indent_guides_enable_on_vim_startup = 1
@@ -1050,7 +1056,7 @@
 
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
-        if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
+        if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
             if !exists('g:airline_theme')
                 let g:airline_theme = 'solarized'
             endif
@@ -1197,23 +1203,23 @@
         endfor
         return s:is_fork
     endfunction
-     
+
     function! s:ExpandFilenameAndExecute(command, file)
         execute a:command . " " . expand(a:file, ":p")
     endfunction
-     
+
     function! s:EditSpf13Config()
         call <SID>ExpandFilenameAndExecute("tabedit", "~/.vimrc")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
-     
+
         execute bufwinnr(".vimrc") . "wincmd w"
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
-     
+
         if <SID>IsSpf13Fork()
             execute bufwinnr(".vimrc") . "wincmd w"
             call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
@@ -1222,10 +1228,10 @@
             wincmd l
             call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
         endif
-     
+
         execute bufwinnr(".vimrc.local") . "wincmd w"
     endfunction
-     
+
     execute "noremap " . s:spf13_edit_config_mapping " :call <SID>EditSpf13Config()<CR>"
     execute "noremap " . s:spf13_apply_config_mapping . " :source ~/.vimrc<CR>"
 " }
