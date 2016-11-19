@@ -189,7 +189,7 @@
         if count(g:spf13_bundle_groups, 'php')
             Plug 'spf13/PIV'
             Plug 'arnaud-lb/vim-php-namespace'
-            Plug 'beyondwords/vim-twig'
+            Plug 'lumiliet/vim-twig'
         endif
     " }
 
