@@ -287,7 +287,7 @@
         if count(g:spf13_bundle_groups, 'misc')
             Plug 'rust-lang/rust.vim'
             Plug 'tpope/vim-markdown'
-            Plug 'spf13/vim-preview'
+            Plug 'greyblake/vim-preview'
             Plug 'tpope/vim-cucumber'
             Plug 'cespare/vim-toml'
             Plug 'quentindecock/vim-cucumber-align-pipes'
