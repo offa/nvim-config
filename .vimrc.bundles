@@ -65,20 +65,13 @@
         endif
     " }
 
-    " Setup Bundle Support {
-        " The next three lines ensure that the ~/.vim/bundle/ system works
-"        filetype off
-"        set rtp+=~/.vim/bundle/vundle
-"        call vundle#rc()
-    " }
-
 " }
 
 " Bundles {
     call plug#begin('~/.vim/plugged')
 
     " Deps {
-        "Plug 'gmarik/vundle'
+
         Plug 'MarcWeber/vim-addon-mw-utils'
         Plug 'tomtom/tlib_vim'
         if executable('ag')
