@@ -88,7 +88,7 @@
     " In your .vimrc.before.local file
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'themes', 'misc',]
+        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'gist', 'themes', 'misc',]
     endif
 
     " To override all the included bundles, add the following to your
@@ -149,8 +149,6 @@
             " Pick one of the checksyntax, jslint, or syntastic
             Plug 'scrooloose/syntastic'
             Plug 'tpope/vim-fugitive'
-            Plug 'mattn/webapi-vim'
-            Plug 'mattn/gist-vim'
             Plug 'scrooloose/nerdcommenter'
             Plug 'godlygeek/tabular'
             Plug 'luochen1990/rainbow'
@@ -273,6 +271,13 @@
             Plug 'elixir-lang/vim-elixir'
             Plug 'carlosgaldino/elixir-snippets'
             Plug 'mattreduce/vim-mix'
+        endif
+    " }
+
+    " Gist {
+        if count(g:spf13_bundle_groups, 'gist')
+            Plug 'mattn/webapi-vim'
+            Plug 'mattn/gist-vim'
         endif
     " }
 
