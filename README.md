@@ -33,6 +33,11 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
 
 
 
+## Credits
+
+Thanks to the *Spf13-Vim* project and all it's contributors.
+
+
 ## License
 
 **Apache 2.0 License**
@@ -48,8 +53,3 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
-## Credits
-
-Thanks to the *Spf13-Vim* project and all it's contributors.
