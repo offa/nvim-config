@@ -19,6 +19,7 @@ RC_DIR=${HOME}
 NVIM_CONF_DIR=${RC_DIR}/.config/nvim
 PLUG_VIM_REPO=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
 function ok() {
     echo -e "\e[0;32m[ OK ]\e[0m\t$1"
 }
@@ -62,21 +63,21 @@ function installPluginManager() {
 
 }
 
+function checkProgram() {
+    if command -v "$1" > /dev/null 2>&1; then
+        ok "$1 found"
+    else
+        fail "$1 not found"
+    fi
+}
+
 
 info "Installation of nvim config"
 
 
 # Check Nvim
-command -v nvim > /dev/null 2>&1 || {
-    fail "'nvim' not found"
-}
-ok "Neovim found"
-
-# Check curl
-command -v curl > /dev/null 2>&1 || {
-    fail "'curl' not found"
-}
-ok "curl found"
+checkProgram nvim
+checkProgram curl
 
 
 # Create backup of files if already existing
@@ -84,6 +85,7 @@ backupIfExisting ${RC_DIR}/.vimrc
 backupIfExisting ${RC_DIR}/.vimrc.before
 backupIfExisting ${RC_DIR}/.vimrc.bundles
 backupIfExisting ${NVIM_CONF_DIR}/init.vim
+
 
 # Create links
 linkConfig .vimrc
