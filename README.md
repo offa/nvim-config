@@ -8,7 +8,7 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
 
 ## Installation
 
-***After cloning*** (or downloading) the repository ***run*** the **`install.sh`** script (requires `curl`).
+***After cloning*** (or downloading) the repository ***run*** the **`install.sh`** script *(requires `curl`)*.
 
 
 ### Manual Installation
