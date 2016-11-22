@@ -22,6 +22,17 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
 1. Run `nvim +PlugInstall` to install the plugins
 
 
+## Updating
+
+| *Update of …*       |                     |                 |
+|--------------------:|:-------------------:|:---------------:|
+| | | |
+| **Config files:**   | `git pull`          | -               |
+| **Plugins:**        | `nvim +PlugUpdate`  | `:PlugUpdate`   |
+| **Plugin Manager:** | `nvim +PlugUpgrade` | `:PlugUpgrade`  |
+
+
+
 ## License
 
 **Apache 2.0 License**
