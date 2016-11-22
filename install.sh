@@ -19,15 +19,22 @@ RC_DIR=${HOME}
 NVIM_CONF_DIR=${RC_DIR}/.config/nvim
 PLUG_VIM_REPO=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+function ok() {
+    echo -e "\e[0;32m[ OK ]\e[0m\t$1"
+}
 
 function fail() {
-    echo "$1"
+    echo -e "\e[0;31m[FAIL]\e[0m\t$1"
     exit 1
+}
+
+function info() {
+    echo -e "[INFO]\t$1"
 }
 
 function backupIfExisting() {
     if [ -e "$1" ] && [ ! -L "$1" ]; then
-        echo "'$1' already existing - create backup"
+        info "'$1' already existing - create backup"
         mv "$1" "$1.backup"
     fi
 }
@@ -44,10 +51,33 @@ function linkConfig {
     createLink $PWD/$1 ${RC_DIR}/$1
 }
 
+function installPluginManager() {
+    curl -fLo ${NVIM_CONF_DIR}/autoload/plug.vim --create-dirs ${PLUG_VIM_REPO} 1> /dev/null
+
+    if [ "$?" -ne 0 ]; then
+        fail "Downloading Plugin manager failed"
+    else
+        ok "Plugin manager downloaded"
+    fi
+
+}
+
+
+info "Installation of nvim config"
+
+
 # Check Nvim
 command -v nvim > /dev/null 2>&1 || {
     fail "'nvim' not found"
 }
+ok "Neovim found"
+
+# Check curl
+command -v curl > /dev/null 2>&1 || {
+    fail "'curl' not found"
+}
+ok "curl found"
+
 
 # Create backup of files if already existing
 backupIfExisting ${RC_DIR}/.vimrc
@@ -60,12 +90,17 @@ linkConfig .vimrc
 linkConfig .vimrc.before
 linkConfig .vimrc.bundles
 createLink ${RC_DIR}/.vimrc ${NVIM_CONF_DIR}/init.vim
+ok "Links created"
 
 
 # Install Plugin Manager
-curl -fLo ${NVIM_CONF_DIR}/autoload/plug.vim --create-dirs ${PLUG_VIM_REPO}
+installPluginManager
 
 
 # Install Plugins
 nvim +PlugUpgrade +PlugInstall +qa!
+ok "Plugins installed"
+
+
+info "Done"
 
