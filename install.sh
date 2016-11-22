@@ -44,6 +44,10 @@ function linkConfig {
     createLink $PWD/$1 ${RC_DIR}/$1
 }
 
+# Check Nvim
+command -v nvim > /dev/null 2>&1 || {
+    fail "'nvim' not found"
+}
 
 # Create backup of files if already existing
 backupIfExisting ${RC_DIR}/.vimrc
