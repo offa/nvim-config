@@ -1,4 +1,4 @@
-# nvim config
+# [nvim config](https://github.com/offa/nvim-config)
 
 [![GitHub release](https://img.shields.io/github/release/offa/nvim-config.svg)](https://github.com/offa/nvim-config/releases)
 [![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE)
