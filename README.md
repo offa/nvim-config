@@ -49,3 +49,7 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
     See the License for the specific language governing permissions and
     limitations under the License.
 
+
+## Credits
+
+Thanks to the *Spf13-Vim* project and all it's contributors.
