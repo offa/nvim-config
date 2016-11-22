@@ -52,7 +52,7 @@ function linkConfig {
 }
 
 function installPluginManager() {
-    curl -fLo ${NVIM_CONF_DIR}/autoload/plug.vim --create-dirs ${PLUG_VIM_REPO} 1> /dev/null
+    curl -sfLo ${NVIM_CONF_DIR}/autoload/plug.vim --create-dirs ${PLUG_VIM_REPO}
 
     if [ "$?" -ne 0 ]; then
         fail "Downloading Plugin manager failed"
