@@ -1,6 +1,24 @@
 # nvim config
 
-This is a fork of the great Spf13-vim distribution. It targets mainly on Neovim and uses vim-plug as plugin manager.
+This is a fork of the great Spf13-vim distribution. It targets on Neovim and uses vim-plug as plugin manager.
+
+
+## Installation
+
+As a first step, clone (or download) the repository. Make sure ***Neovim*** is installed.
+
+Next run the `install.sh` script (this requires `curl`).
+
+
+### Manual Installation
+
+1. Create Symlink these symlinks:
+ 1. `~/.vimrc`
+ 1. `~/.vimrc.before`
+ 1. `~/.vimrc.bundles`
+1. Create Symlink `~/.config/nvim/init.vim` to `~/.vimrc`
+1. Download and install *Vim-Plug*
+1. Run `nvim +PlugInstall` to install the plugins
 
 
 ## License
