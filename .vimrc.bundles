@@ -99,7 +99,7 @@
     " General {
         if count(g:spf13_bundle_groups, 'general')
             Plug 'scrooloose/nerdtree'
-            Plug 'altercation/vim-colors-solarized'
+            Plug 'iCyMind/NeoSolarized'
             Plug 'tpope/vim-surround'
             Plug 'tpope/vim-repeat'
             Plug 'rhysd/conflict-marker.vim'
