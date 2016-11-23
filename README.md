@@ -1,7 +1,7 @@
 # [nvim config](https://github.com/offa/nvim-config)
 
 [![GitHub release](https://img.shields.io/github/release/offa/nvim-config.svg)](https://github.com/offa/nvim-config/releases)
-[![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE) ![Neovim](https://img.shields.io/badge/nvim-0.1.5+-green.svg)
 
 This is a fork of the great Spf13-vim distribution. It targets on Neovim and uses vim-plug as plugin manager.
 
