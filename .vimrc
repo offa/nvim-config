@@ -182,7 +182,7 @@
 
 " Vim UI {{
 
-    if has("termguicolors")
+    if has("termguicolors") && !exists('g:nvimconfig_no_termguicolors')
         set termguicolors
     endif
 
