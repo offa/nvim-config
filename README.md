@@ -32,6 +32,50 @@ This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Ne
 | **Plugin Manager:** | `nvim +PlugUpgrade` | `:PlugUpgrade`  |
 
 
+## Customization
+
+The are *optional* `*.local` files for customization (*italic*); those in bold are provided. All configurations are loaded in this order:
+
+1. **.vimrc.before**
+1. *.vimrc.before.local*
+1. **.vimrc.bundles**
+1. *.vimrc.bundles.local*
+1. **.vimrc**
+1. *.vimrc.local*
+
+
+### Selection of plugin groups
+
+There are many plugins available – but most of the time not all are needed. Therefore it's possible to create a custom selection of plugin groups.
+
+This is done by the `.vimrc.before.local` file:
+
+```
+" Custom plugin group selection
+let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
+```
+
+To see what groups are available (and what plugins are included by them) have a look into the [.vimrc.bundles](./.vimrc.bundles) file.
+
+**Note:** After changing this settings it's useful to *install* (`:PlugInstal`) new and *cleanup* (`:PlugClean`) old plugins.
+
+
+### Adding a new plugin
+
+New plugin's are added by a custom `~/.vimrc.bundles.local` file. Run `:PlugInstall` will install them.
+
+**Example:**
+
+```
+Plug 'airblade/vim-gitgutter'
+```
+
+
+### Removing old plugins
+
+After a plugin has been removed – either by removing it from `.vimrc.bundles.local` are disabling his *group* a `:PlugClean` is necessary to cleanup it's files.
+
+
 
 ## Documentation
 
