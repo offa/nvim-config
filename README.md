@@ -37,11 +37,11 @@ This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Ne
 The are *optional* `*.local` files for customization (*italic*); those in bold are provided. All configurations are loaded in this order:
 
 1. **.vimrc.before**
-1. *.vimrc.before.local*
+ - *.vimrc.before.local*
 1. **.vimrc.bundles**
-1. *.vimrc.bundles.local*
+ - *.vimrc.bundles.local*
 1. **.vimrc**
-1. *.vimrc.local*
+ - *.vimrc.local*
 
 
 ### Selection of plugin groups
@@ -50,7 +50,7 @@ There are many plugins available – but most of the time not all are needed. Th
 
 This is done by the `.vimrc.before.local` file:
 
-```
+```vim
 " Custom plugin group selection
 let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
 ```
@@ -66,7 +66,7 @@ New plugin's are added by a custom `~/.vimrc.bundles.local` file. Run `:PlugInst
 
 **Example:**
 
-```
+```vim
 Plug 'airblade/vim-gitgutter'
 ```
 
