@@ -3,7 +3,7 @@
 [![GitHub release](https://img.shields.io/github/release/offa/nvim-config.svg)](https://github.com/offa/nvim-config/releases)
 [![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE) ![Neovim](https://img.shields.io/badge/nvim-0.1.5+-green.svg)
 
-This is a fork of the great Spf13-vim distribution. It targets on Neovim and uses vim-plug as plugin manager.
+This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Neovim**](https://neovim.io/) using [**vim-plug**](https://github.com/junegunn/vim-plug) als plugin manager.
 
 
 ## Installation
@@ -18,7 +18,7 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
  1. `~/.vimrc.before`
  1. `~/.vimrc.bundles`
 1. Symlink `~/.config/nvim/init.vim` to `~/.vimrc`
-1. Download and install *Vim-Plug*
+1. Download and install [**vim-plug**](https://github.com/junegunn/vim-plug)
 1. Run `nvim +PlugInstall` to install the plugins
 
 
@@ -33,9 +33,14 @@ This is a fork of the great Spf13-vim distribution. It targets on Neovim and use
 
 
 
+## Documentation
+
+For detailed description of configurations and plugins referr to the original [Spf13-vim Readme](./README.spf13.md) or it's [project](https://github.com/spf13/spf13-vim). in matters of plugin installations see [**vim-plug**](https://github.com/junegunn/vim-plug).
+
+
 ## Credits
 
-Thanks to the *Spf13-Vim* project and all it's contributors.
+Thanks to the [*Spf13-vim*](https://github.com/spf13/spf13-vim) project and all it's contributors.
 
 
 ## License
