@@ -51,10 +51,18 @@ Available themes:
 - [NeoSolarized](https://github.com/icymind/NeoSolarized)
 - [onedark](https://github.com/joshdick/onedark.vim)
 
-**Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled by this line (`.vimrc.before.local`):
+**Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled:
+
+**Method 1 (`.vimrc.before.local`):**
 
 ```vim
 let g:nvimconfig_no_termguicolors = 1
+```
+
+**Method 2 (`.vimrc.local`):**
+
+```vim
+set notermguicolors
 ```
 
 
