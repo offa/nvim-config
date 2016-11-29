@@ -43,6 +43,20 @@ The are *optional* `*.local` files for customization (*italic*); those in bold a
 1. **.vimrc**
  - *.vimrc.local*
 
+### Themes
+
+Available themes:
+
+- [gruvbox](https://github.com/morhetz/gruvbox) – *Default*
+- [NeoSolarized](https://github.com/icymind/NeoSolarized)
+- [onedark](https://github.com/joshdick/onedark.vim)
+
+**Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled by this line (`.vimrc.before.local`):
+
+```vim
+let g:nvimconfig_no_termguicolors = 1
+```
+
 
 ### Selection of plugin groups
 
