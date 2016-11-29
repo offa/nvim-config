@@ -88,7 +88,7 @@
     " In your .vimrc.before.local file
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'gist', 'themes', 'misc',]
+        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'gist', 'misc',]
     endif
 
     " To override all the included bundles, add the following to your
@@ -98,8 +98,13 @@
 
     " General {
         if count(g:spf13_bundle_groups, 'general')
-            Plug 'scrooloose/nerdtree'
+            " Themes
             Plug 'iCyMind/NeoSolarized'
+            Plug 'dracula/vim'
+            Plug 'joshdick/onedark.vim'
+
+            Plug 'morhetz/gruvbox'
+            Plug 'scrooloose/nerdtree'
             Plug 'tpope/vim-surround'
             Plug 'tpope/vim-repeat'
             Plug 'rhysd/conflict-marker.vim'
@@ -277,13 +282,6 @@
         if count(g:spf13_bundle_groups, 'gist')
             Plug 'mattn/webapi-vim'
             Plug 'mattn/gist-vim'
-        endif
-    " }
-
-    " Themes {
-        if count(g:spf13_bundle_groups, 'themes')
-            Plug 'spf13/vim-colors'
-            Plug 'flazz/vim-colorschemes'
         endif
     " }
 

@@ -186,8 +186,10 @@
         set termguicolors
     endif
 
-    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/plugged/NeoSolarized/colors/NeoSolarized.vim"))
-        color NeoSolarized          " Load a colorscheme
+    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/plugged/gruvbox/colors/gruvbox.vim"))
+        " Set color schemes
+        color gruvbox
+        let g:airline_theme = 'gruvbox'
     endif
 
     set tabpagemax=15               " Only show 15 tabs
