@@ -67,7 +67,7 @@ New plugin's are added by a custom `~/.vimrc.bundles.local` file. Run `:PlugInst
 **Example:**
 
 ```vim
-Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-bufferline'
 ```
 
 
