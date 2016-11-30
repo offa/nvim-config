@@ -35,7 +35,7 @@ function info() {
 
 function backupIfExisting() {
     if [ -e "$1" ] && [ ! -L "$1" ]; then
-        info "'$1' already existing - create backup"
+        info "'$1' already exists - creating backup"
         mv "$1" "$1.backup"
     fi
 }
@@ -44,7 +44,7 @@ function createLink {
     ln -s -f $1 $2
 
     if [ "$?" -ne 0 ]; then
-        fail "Unable to create link link $1 --> $2"
+        fail "Unable to create link $1 --> $2"
     fi
 }
 
@@ -57,8 +57,6 @@ function installPluginManager() {
 
     if [ "$?" -ne 0 ]; then
         fail "Downloading Plugin manager failed"
-    else
-        ok "Plugin manager downloaded"
     fi
 
 }
@@ -97,6 +95,7 @@ ok "Links created"
 
 # Install Plugin Manager
 installPluginManager
+ok "Plugin manager downloaded"
 
 
 # Install Plugins
