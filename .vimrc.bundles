@@ -102,8 +102,8 @@
             Plug 'iCyMind/NeoSolarized'
             Plug 'dracula/vim'
             Plug 'joshdick/onedark.vim'
-
             Plug 'morhetz/gruvbox'
+
             Plug 'scrooloose/nerdtree'
             Plug 'tpope/vim-surround'
             Plug 'tpope/vim-repeat'
