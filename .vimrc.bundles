@@ -285,6 +285,12 @@
         endif
     " }
 
+    " Latex {
+        if count(g:spf13_bundle_groups, 'latex')
+            Plug 'lervag/vimtex'
+        endif
+    " }
+
     " Misc {
         if count(g:spf13_bundle_groups, 'misc')
             Plug 'rust-lang/rust.vim'
