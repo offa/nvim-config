@@ -157,7 +157,7 @@
             Plug 'godlygeek/tabular'
             Plug 'luochen1990/rainbow'
             if executable('ctags')
-                Plug 'majutsushi/tagbar'
+                "Plug 'majutsushi/tagbar'
             endif
         endif
     " }
