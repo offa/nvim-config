@@ -53,13 +53,7 @@ Available themes:
 
 **Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled:
 
-**Method 1 (`.vimrc.before.local`):**
-
-```vim
-let g:nvimconfig_no_termguicolors = 1
-```
-
-**Method 2 (`.vimrc.local`):**
+**(`.vimrc.local`):**
 
 ```vim
 set notermguicolors
