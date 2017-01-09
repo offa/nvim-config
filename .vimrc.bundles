@@ -103,6 +103,7 @@
             Plug 'dracula/vim'
             Plug 'joshdick/onedark.vim'
             Plug 'morhetz/gruvbox'
+            Plug 'Yggdroot/indentLine'
 
             Plug 'scrooloose/nerdtree'
             Plug 'tpope/vim-surround'
