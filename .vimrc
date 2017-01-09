@@ -811,7 +811,7 @@
                     smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
 
                     inoremap <expr><C-g> deoplete#undo_completion()
-                    inoremap <expr><C-l> deoplete#complete_common_string()
+                    inoremap <expr><C-l> deoplete#mappings#refresh()
                     "inoremap <expr><CR> deoplete#complete_common_string()
 
                     " <CR>: close popup
