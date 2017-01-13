@@ -716,6 +716,7 @@
 
             " Refresh Signify after commit
             au FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
+            nnoremap <silent> <leader>gu :SignifyRefresh<CR>
 
         endif
     " }}
