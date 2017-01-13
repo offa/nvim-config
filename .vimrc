@@ -1077,11 +1077,9 @@
             if !exists('g:airline_theme')
                 let g:airline_theme = 'solarized'
             endif
-            if !exists('g:airline_powerline_fonts')
-                " Use the default set of separators with a few customizations
-                let g:airline_left_sep='›'  " Slightly fancier than '>'
-                let g:airline_right_sep='‹' " Slightly fancier than '<'
-            endif
+
+            let g:airline#extensions#tabline#enabled=1  " Smarter Tabline
+            let g:airline_powerline_fonts=1             " Powerline Fonts
         endif
     " }}
 
