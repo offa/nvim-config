@@ -713,11 +713,10 @@
             " Mnemonic _i_nteractive
             nnoremap <silent> <leader>gi :Git add -p %<CR>
             nnoremap <silent> <leader>gg :SignifyToggle<CR>
+            nnoremap <silent> <leader>gu :SignifyRefresh<CR>
 
             " Refresh Signify after commit
             au FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
-            nnoremap <silent> <leader>gu :SignifyRefresh<CR>
-
         endif
     " }}
 
