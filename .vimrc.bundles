@@ -107,6 +107,7 @@
             Plug 'Yggdroot/indentLine'
             Plug 'roman/golden-ratio'
 
+            Plug 'jeetsukumaran/vim-buffergator'
             Plug 'scrooloose/nerdtree'
             Plug 'tpope/vim-surround'
             Plug 'tpope/vim-repeat'
