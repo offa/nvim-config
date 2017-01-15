@@ -72,6 +72,7 @@ function checkProgram() {
 
 info "Installation of nvim config"
 
+# Ensure onfig directory
 mkdir -p ${NVIM_CONF_DIR}
 
 # Check Nvim
