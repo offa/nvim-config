@@ -72,6 +72,7 @@ function checkProgram() {
 
 info "Installation of nvim config"
 
+mkdir -p ${NVIM_CONF_DIR}
 
 # Check Nvim
 checkProgram nvim
