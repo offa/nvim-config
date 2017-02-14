@@ -160,9 +160,9 @@
             Plug 'scrooloose/nerdcommenter'
             Plug 'godlygeek/tabular'
             Plug 'luochen1990/rainbow'
-            "if executable('ctags')     " Disabled until fixed (see #25)
-                "Plug 'majutsushi/tagbar'
-            "endif
+            if executable('ctags')
+                Plug 'majutsushi/tagbar'
+            endif
         endif
     " }
 
