@@ -853,6 +853,7 @@
 
     " deoplete {{
         if count(g:spf13_bundle_groups, 'deoplete')
+            let g:deoplete#auto_complete_delay= 150 " Workaround #36
 
             let g:acp_enableAtStartup = 0
             let g:deoplete#enable_at_startup = 1
