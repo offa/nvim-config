@@ -853,8 +853,6 @@
 
     " deoplete {{
         if count(g:spf13_bundle_groups, 'deoplete')
-            let g:deoplete#auto_complete_delay= 150 " Workaround #36
-
             let g:acp_enableAtStartup = 0
             let g:deoplete#enable_at_startup = 1
             let g:deoplete#enable_smart_case = 1
@@ -864,6 +862,8 @@
             let g:deoplete#enable_refresh_always = 1
             let g:deoplete#max_abbr_width = 0
             let g:deoplete#max_menu_width = 0
+            let g:deoplete#auto_complete_delay= 150
+
 
             " Define dictionary.
             let g:deoplete#sources#dictionary#dictionaries = {
