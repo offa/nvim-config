@@ -15,7 +15,6 @@ This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Ne
 
 1. Create these symlinks:
  1. `~/.vimrc`
- 1. `~/.vimrc.before`
  1. `~/.vimrc.bundles`
 1. Symlink `~/.config/nvim/init.vim` to `~/.vimrc`
 1. Download and install [**vim-plug**](https://github.com/junegunn/vim-plug)
@@ -36,7 +35,6 @@ This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Ne
 
 The are *optional* `*.local` files for customization (*italic*); those in bold are provided. All configurations are loaded in this order:
 
-1. **.vimrc.before**
 1. *.vimrc.before.local*
 1. **.vimrc.bundles**
 1. *.vimrc.bundles.local*
