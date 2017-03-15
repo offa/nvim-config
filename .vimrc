@@ -1209,7 +1209,7 @@
 
     " Initialize directories {{
     function! InitializeDirectories()
-        let parent = $HOME
+        let parent = $HOME . "/.vim"
         let prefix = 'vim'
         let dir_list = {
                     \ 'backup': 'backupdir',
