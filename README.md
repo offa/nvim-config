@@ -37,11 +37,11 @@ This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Ne
 The are *optional* `*.local` files for customization (*italic*); those in bold are provided. All configurations are loaded in this order:
 
 1. **.vimrc.before**
- - *.vimrc.before.local*
+1. *.vimrc.before.local*
 1. **.vimrc.bundles**
- - *.vimrc.bundles.local*
+1. *.vimrc.bundles.local*
 1. **.vimrc**
- - *.vimrc.local*
+1. *.vimrc.local*
 
 ### Themes
 
