@@ -163,6 +163,7 @@
             if executable('ctags')
                 Plug 'majutsushi/tagbar'
             endif
+            Plug 'sheerun/vim-polyglot'
             Plug 'nickhutchinson/vim-cmake-syntax'
         endif
     " }
