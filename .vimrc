@@ -1228,7 +1228,7 @@
         if exists('g:spf13_consolidated_directory')
             let common_dir = g:spf13_consolidated_directory . prefix
         else
-            let common_dir = parent . '/.' . prefix
+            let common_dir = parent . '/' . prefix
         endif
 
         for [dirname, settingname] in items(dir_list)
