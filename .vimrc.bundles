@@ -104,7 +104,6 @@
             Plug 'joshdick/onedark.vim'
             Plug 'morhetz/gruvbox'
 
-            Plug 'Yggdroot/indentLine'
             Plug 'roman/golden-ratio'
 
             Plug 'jeetsukumaran/vim-buffergator'
