@@ -1177,7 +1177,6 @@
         endif
     " }}
 
-    "
     " vim-cpp-enhanced-highlight {{
         " Set syntax highlighting options.
         if isdirectory(expand("~/.vim/plugged/vim-cpp-enhanced-highlight/"))
