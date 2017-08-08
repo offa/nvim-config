@@ -1177,6 +1177,13 @@
         endif
     " }}
 
+    "
+    " vim-cpp-enhanced-highlight {{
+        " Set syntax highlighting options.
+        if isdirectory(expand("~/.vim/plugged/vim-cpp-enhanced-highlight/"))
+            let g:cpp_concepts_highlight = 1
+        endif
+    " }}
 
 
 " }}

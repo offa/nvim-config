@@ -88,7 +88,7 @@
     " In your .vimrc.before.local file
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
+        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'c_cpp', ]
     endif
 
     " To override all the included bundles, add the following to your
@@ -163,7 +163,6 @@
                 Plug 'majutsushi/tagbar'
             endif
             Plug 'sheerun/vim-polyglot'
-            Plug 'nickhutchinson/vim-cmake-syntax'
         endif
     " }
 
@@ -189,6 +188,13 @@
             Plug 'Shougo/neosnippet'
             Plug 'Shougo/neosnippet-snippets'
             Plug 'honza/vim-snippets'
+        endif
+    " }
+   
+    " C / C++ {
+        if count(g:spf13_bundle_groups, 'c_cpp')
+            Plug 'nickhutchinson/vim-cmake-syntax'
+            Plug 'octol/vim-cpp-enhanced-highlight'
         endif
     " }
 
