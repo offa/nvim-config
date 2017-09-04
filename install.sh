@@ -82,14 +82,12 @@ checkProgram curl
 
 # Create backup of files if already existing
 backupIfExisting ${RC_DIR}/.vimrc
-backupIfExisting ${RC_DIR}/.vimrc.before
 backupIfExisting ${RC_DIR}/.vimrc.bundles
 backupIfExisting ${NVIM_CONF_DIR}/init.vim
 
 
 # Create links
 linkConfig .vimrc
-linkConfig .vimrc.before
 linkConfig .vimrc.bundles
 createLink ${RC_DIR}/.vimrc ${NVIM_CONF_DIR}/init.vim
 ok "Links created"
