@@ -20,27 +20,27 @@ NVIM_CONF_DIR=${RC_DIR}/.config/nvim
 PLUG_VIM_REPO=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
-function ok() {
+ok() {
     echo -e "\e[0;32m[ OK ]\e[0m\t$1"
 }
 
-function fail() {
+fail() {
     echo -e "\e[0;31m[FAIL]\e[0m\t$1"
     exit 1
 }
 
-function info() {
+info() {
     echo -e "[INFO]\t$1"
 }
 
-function backupIfExisting() {
+backupIfExisting() {
     if [ -e "$1" ] && [ ! -L "$1" ]; then
         info "'$1' already exists - creating backup"
         mv "$1" "$1.backup"
     fi
 }
 
-function createLink {
+createLink() {
     ln -s -f $1 $2
 
     if [ "$?" -ne 0 ]; then
@@ -48,11 +48,11 @@ function createLink {
     fi
 }
 
-function linkConfig {
+linkConfig() {
     createLink $PWD/$1 ${RC_DIR}/$1
 }
 
-function installPluginManager() {
+installPluginManager() {
     curl -sfLo ${NVIM_CONF_DIR}/autoload/plug.vim --create-dirs ${PLUG_VIM_REPO}
 
     if [ "$?" -ne 0 ]; then
@@ -61,7 +61,7 @@ function installPluginManager() {
 
 }
 
-function checkProgram() {
+checkProgram() {
     if command -v "$1" > /dev/null 2>&1; then
         ok "$1 found"
     else
