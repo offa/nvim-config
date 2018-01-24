@@ -158,7 +158,7 @@
             source ~/.vimrc.before.fork
         endif
     " }
-    
+
     " Use local before if available {
         if filereadable(expand("~/.vimrc.before.local"))
             source ~/.vimrc.before.local
@@ -785,6 +785,13 @@
     " Rainbow {{
         if isdirectory(expand("~/.vim/plugged/rainbow/"))
             let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+            " Disable for CMake as it breaks the syntax highlighting (#40)
+            let g:rainbow_conf = {
+            \   'separately': {
+            \       'cmake': 0,
+            \   }
+            \}
+
         endif
     " }}
 
