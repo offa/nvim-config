@@ -193,8 +193,8 @@
    
     " C / C++ {
         if count(g:spf13_bundle_groups, 'c_cpp')
-            Plug 'nickhutchinson/vim-cmake-syntax'
             Plug 'octol/vim-cpp-enhanced-highlight'
+            Plug 'pboettch/vim-cmake-syntax'
         endif
     " }
 
