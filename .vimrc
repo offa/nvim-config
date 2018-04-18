@@ -862,14 +862,10 @@
         if count(g:spf13_bundle_groups, 'deoplete')
             let g:acp_enableAtStartup = 0
             let g:deoplete#enable_at_startup = 1
-            let g:deoplete#enable_smart_case = 1
             let g:deoplete#enable_auto_delimiter = 1
-            let g:deoplete#max_list = 15
             let g:deoplete#force_overwrite_completefunc = 1
-            let g:deoplete#enable_refresh_always = 1
             let g:deoplete#max_abbr_width = 0
             let g:deoplete#max_menu_width = 0
-            let g:deoplete#auto_complete_delay= 150
 
 
             " Define dictionary.
@@ -878,12 +874,6 @@
                         \ 'vimshell' : $HOME.'/.vimshell_hist',
                         \ 'scheme' : $HOME.'/.gosh_completions'
                         \ }
-
-            " Define keyword.
-            if !exists('g:deoplete#keyword_patterns')
-                let g:deoplete#keyword_patterns = {}
-            endif
-            let g:deoplete#keyword_patterns['default'] = '\h\w*'
 
             " Plugin key-mappings {{
                 " These two lines conflict with the default digraph mapping of <C-K>
@@ -965,26 +955,6 @@
 
                 imap <expr> <Tab> CleverTab()
             " }}
-
-            " Enable heavy omni completion.
-            if !exists('g:deoplete#sources#omni#input_patterns')
-                let g:deoplete#sources#omni#input_patterns = {}
-            endif
-            let g:deoplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-            let g:deoplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-            let g:deoplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-            let g:deoplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-            let g:deoplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-            let g:deoplete#sources#omni#input_patterns.tex = '\\(?:'
-                        \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-                        \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-                        \ . '|hyperref\s*\[[^]]*'
-                        \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-                        \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
-                        \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-                        \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
-                        \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
-                        \ .')'
 
     " }}
 
