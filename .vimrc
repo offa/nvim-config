@@ -1228,7 +1228,7 @@
             let directory = common_dir . dirname . '/'
             if exists("*mkdir")
                 if !isdirectory(directory)
-                    call mkdir(directory)
+                    call mkdir(directory, 'p')
                 endif
             endif
             if !isdirectory(directory)
