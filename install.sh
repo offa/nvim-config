@@ -72,7 +72,7 @@ checkProgram() {
 
 info "Installation of nvim config"
 
-# Ensure onfig directory
+# Ensure config directory
 mkdir -p ${NVIM_CONF_DIR}
 
 # Check Nvim
