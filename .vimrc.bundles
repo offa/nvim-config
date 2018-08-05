@@ -105,7 +105,7 @@
             Plug 'morhetz/gruvbox'
 
             Plug 'roman/golden-ratio'
-
+            Plug 'RRethy/vim-illuminate'
             Plug 'jeetsukumaran/vim-buffergator'
             Plug 'scrooloose/nerdtree'
             Plug 'tpope/vim-surround'
