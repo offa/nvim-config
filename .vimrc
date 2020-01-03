@@ -75,7 +75,7 @@
 
     " This makes the completion popup strictly passive.
     " Keypresses acts normally. <ESC> takes you of insert mode, words don't
-    " automatically complete, pressing <CR> inserts a newline, etc. Iff the
+    " automatically complete, pressing <CR> inserts a newline, etc. If the
     " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
     " expands it and jumps between fields.
     "   let g:spf13_noninvasive_completion = 1
