@@ -826,6 +826,12 @@
         endif
     " }}
 
+    " SuperTab {{
+        if isdirectory(expand("~/.vim/plugged/supertab/"))
+            let g:SuperTabDefaultCompletionType = "<c-n>"
+        endif
+    " }}
+
     " YouCompleteMe {{
         if count(g:spf13_bundle_groups, 'youcompleteme')
             let g:acp_enableAtStartup = 0
