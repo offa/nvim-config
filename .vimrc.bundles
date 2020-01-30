@@ -82,8 +82,6 @@
     " General {
         if count(g:spf13_bundle_groups, 'general')
             " Themes
-            Plug 'iCyMind/NeoSolarized'
-            Plug 'dracula/vim'
             Plug 'joshdick/onedark.vim'
             Plug 'morhetz/gruvbox'
 
