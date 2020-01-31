@@ -43,10 +43,9 @@ The are *optional* `*.local` files for customization (*italic*); those in bold a
 
 ### Themes
 
-Available themes:
+Themes available by default:
 
 - [gruvbox](https://github.com/morhetz/gruvbox) – *Default*
-- [NeoSolarized](https://github.com/icymind/NeoSolarized)
 - [onedark](https://github.com/joshdick/onedark.vim)
 
 **Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled (**`.vimrc.local`**):
