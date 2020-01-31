@@ -85,6 +85,11 @@
             Plug 'joshdick/onedark.vim'
             Plug 'morhetz/gruvbox'
 
+            " Airline
+            Plug 'vim-airline/vim-airline'
+            Plug 'vim-airline/vim-airline-themes'
+            Plug 'powerline/fonts'
+
             Plug 'roman/golden-ratio'
             Plug 'RRethy/vim-illuminate'
             Plug 'jeetsukumaran/vim-buffergator'
@@ -98,15 +103,6 @@
             Plug 'terryma/vim-multiple-cursors'
             Plug 'vim-scripts/sessionman.vim'
             Plug 'benjifisher/matchit.zip'
-            if (has("python") || has("python3")) && exists('g:spf13_use_powerline') && !exists('g:spf13_use_old_powerline')
-                Plug 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
-            elseif exists('g:spf13_use_powerline') && exists('g:spf13_use_old_powerline')
-                Plug 'Lokaltog/vim-powerline'
-            else
-                Plug 'vim-airline/vim-airline'
-                Plug 'vim-airline/vim-airline-themes'
-            endif
-            Plug 'powerline/fonts'
             Plug 'easymotion/vim-easymotion'
             Plug 'jistr/vim-nerdtree-tabs'
             Plug 'mbbill/undotree'
