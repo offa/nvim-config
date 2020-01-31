@@ -3,17 +3,17 @@
 [![GitHub release](https://img.shields.io/github/release/offa/nvim-config.svg)](https://github.com/offa/nvim-config/releases)
 [![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE) ![Neovim](https://img.shields.io/badge/nvim-0.1.5+-green.svg)
 
-This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Neovim**](https://neovim.io/) using [**vim-plug**](https://github.com/junegunn/vim-plug) als plugin manager.
+This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Neovim**](https://neovim.io/) using [**vim-plug**](https://github.com/junegunn/vim-plug) as plugin manager.
 
 
 ## Installation
 
-*After cloning* (or downloading) the repository ***run*** the **`install.sh`** script *(requires `curl`)*.
+Clone or download the repository and ***run*** the **`install.sh`** script *(requires `curl`)*.
 
 
 ### Manual Installation
 
-1. Create these symlinks:
+1. Create symlinks:
  1. `~/.vimrc`
  1. `~/.vimrc.bundles`
 1. Symlink `~/.config/nvim/init.vim` to `~/.vimrc`
@@ -23,17 +23,17 @@ This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Ne
 
 ## Updating
 
-| *Update of …*       |                     |                 |
-|--------------------:|:-------------------:|:---------------:|
+| *Update of …*       |                     |
+|--------------------:|:-------------------:|
 | | | |
-| **Config files:**   | `git pull`          | -               |
-| **Plugins:**        | `nvim +PlugUpdate`  | `:PlugUpdate`   |
-| **Plugin Manager:** | `nvim +PlugUpgrade` | `:PlugUpgrade`  |
+| **Config files:**   | `git pull`          |
+| **Plugins:**        | `nvim +PlugUpdate`  |
+| **Plugin Manager:** | `nvim +PlugUpgrade` |
 
 
 ## Customization
 
-The are *optional* `*.local` files for customization (*italic*); those in bold are provided. All configurations are loaded in this order:
+The are *optional* `*.local` files for customization (*italic*); those in bold are provided. Configurations is loaded in order:
 
 1. *.vimrc.before.local*
 1. **.vimrc.bundles**
@@ -58,9 +58,7 @@ set notermguicolors
 
 ### Selection of plugin groups
 
-There are many plugins available – but most of the time not all are needed. Therefore it's possible to create a custom selection of plugin groups.
-
-This is done by the `.vimrc.before.local` file:
+It's possible to create a custom selection of plugin groups using the `.vimrc.before.local` file:
 
 ```vim
 " Custom plugin group selection
@@ -85,13 +83,7 @@ Plug 'bling/vim-bufferline'
 
 ### Removing old plugins
 
-After a plugin has been removed – either by removing it from `.vimrc.bundles.local` are disabling his *group* a `:PlugClean` is necessary to cleanup it's files.
-
-
-
-## Documentation
-
-For detailed description of configurations and plugins referr to the original [Spf13-vim Readme](./README.spf13.md) or it's [project](https://github.com/spf13/spf13-vim). in matters of plugin installations see [**vim-plug**](https://github.com/junegunn/vim-plug).
+After a plugin has been removed a `:PlugClean` is necessary to cleanup it's files.
 
 
 ## Credits
