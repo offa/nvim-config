@@ -69,7 +69,7 @@ let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
 
 To see what groups are available (and what plugins are included by them) have a look into the [.vimrc.bundles](./.vimrc.bundles) file.
 
-**Note:** After changing this settings it's useful to *install* (`:PlugInstal`) new and *cleanup* (`:PlugClean`) old plugins.
+**Note:** After changing this settings it's useful to *install* (`:PlugInstall`) new and *cleanup* (`:PlugClean`) old plugins.
 
 
 ### Adding a new plugin
