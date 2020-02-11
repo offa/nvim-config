@@ -90,6 +90,7 @@
             Plug 'vim-airline/vim-airline-themes'
             Plug 'powerline/fonts'
 
+            Plug 'raviqqe/vim-nonblank'
             Plug 'roman/golden-ratio'
             Plug 'RRethy/vim-illuminate'
             Plug 'jeetsukumaran/vim-buffergator'
@@ -168,7 +169,7 @@
             Plug 'honza/vim-snippets'
         endif
     " }
-   
+
     " C / C++ {
         if count(g:spf13_bundle_groups, 'c_cpp')
             Plug 'octol/vim-cpp-enhanced-highlight'
