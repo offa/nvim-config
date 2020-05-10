@@ -138,6 +138,7 @@
             Plug 'scrooloose/nerdcommenter'
             Plug 'godlygeek/tabular'
             Plug 'luochen1990/rainbow'
+            Plug 'sbdchd/neoformat'
             if executable('ctags')
                 Plug 'majutsushi/tagbar'
             endif
