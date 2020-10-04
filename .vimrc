@@ -846,17 +846,6 @@
     " deoplete {{
         if count(g:spf13_bundle_groups, 'deoplete')
             let g:deoplete#enable_at_startup = 1
-            let g:deoplete#enable_auto_delimiter = 1
-            let g:deoplete#force_overwrite_completefunc = 1
-            let g:deoplete#max_abbr_width = 0
-            let g:deoplete#max_menu_width = 0
-
-            " Define dictionary.
-            let g:deoplete#sources#dictionary#dictionaries = {
-                        \ 'default' : '',
-                        \ 'vimshell' : $HOME.'/.vimshell_hist',
-                        \ 'scheme' : $HOME.'/.gosh_completions'
-                        \ }
 
             " Plugin key-mappings {{
                 " These two lines conflict with the default digraph mapping of <C-K>
