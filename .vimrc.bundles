@@ -132,8 +132,7 @@
 
     " General Programming {
         if count(g:spf13_bundle_groups, 'programming')
-            " Pick one of the checksyntax, jslint, or syntastic
-            Plug 'vim-syntastic/syntastic'
+            Plug 'dense-analysis/ale'
             Plug 'tpope/vim-fugitive'
             Plug 'scrooloose/nerdcommenter'
             Plug 'godlygeek/tabular'

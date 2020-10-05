@@ -531,6 +531,19 @@
         endif
     " }}
 
+    " ALE {{
+        if isdirectory(expand("~/.vim/plugged/ale/"))
+            let g:airline#extensions#ale#enabled=1
+            if count(g:spf13_bundle_groups, 'c_cpp')
+                let g:ale_c_cc_options='-Wall -Wextra -Wpedantic'
+                let g:ale_cpp_cc_options='-std=c++2a ' . g:ale_c_cc_options
+                let g:ale_cpp_clangtidy_extra_options=g:ale_cpp_cc_options
+                let g:ale_c_cppcheck_options='--enable=style --suppress=syntaxError'
+                let g:ale_cpp_cppcheck_options=g:ale_c_cppcheck_options
+            endif
+        endif
+    " }}
+
     " GoLang {{
         if count(g:spf13_bundle_groups, 'go')
             let g:go_highlight_functions = 1
