@@ -630,12 +630,6 @@
         endif
     " }}
 
-    " AutoCloseTag {{
-        " Make it so AutoCloseTag works for xml and xhtml files as well
-        au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
-        nmap <Leader>ac <Plug>ToggleAutoCloseMappings
-    " }}
-
     " NerdTree {{
         if isdirectory(expand("~/.vim/plugged/nerdtree"))
             map <C-e> <plug>NERDTreeTabsToggle<CR>
