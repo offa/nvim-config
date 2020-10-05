@@ -641,12 +641,6 @@
         nmap <Leader>ac <Plug>ToggleAutoCloseMappings
     " }}
 
-    " SnipMate {{
-        " Setting the author var
-        " If forking, please overwrite in your .vimrc.local file
-        let g:snips_author = 'Steve Francia <steve.francia@gmail.com>'
-    " }}
-
     " NerdTree {{
         if isdirectory(expand("~/.vim/plugged/nerdtree"))
             map <C-e> <plug>NERDTreeTabsToggle<CR>
