@@ -912,6 +912,11 @@
         endif
     " }}
 
+    " vim-closetag {{
+        if isdirectory(expand("~/.vim/plugged/vim-closetag/"))
+            let g:closetag_filetypes = 'xml,html,xhtml,phtml'
+        endif
+    " }}
 
 " }}
 

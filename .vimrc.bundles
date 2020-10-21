@@ -143,6 +143,7 @@
                 Plug 'majutsushi/tagbar'
             endif
             Plug 'sheerun/vim-polyglot'
+            Plug 'alvan/vim-closetag'
         endif
     " }
 
