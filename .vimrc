@@ -1,7 +1,7 @@
 " Modeline and Notes {{
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={{,}} foldlevel=0 foldmethod=marker spell:
 "
-" Copyright 2016-2020 offa
+" Copyright 2016-2021 offa
 " Copyright 2014 Steve Francia
 "
 " Licensed under the Apache License, Version 2.0 (the "License");
