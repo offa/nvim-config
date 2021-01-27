@@ -535,7 +535,7 @@
         if isdirectory(expand("~/.vim/plugged/ale/"))
             let g:airline#extensions#ale#enabled=1
             if count(g:spf13_bundle_groups, 'c_cpp')
-                let s:cpp_standard_flag='-std=c++2a'
+                let s:cpp_standard_flag='-std=c++20'
                 let g:ale_c_cc_options='-Wall -Wextra -Wpedantic'
                 let g:ale_c_cppcheck_options='--enable=style --suppress=syntaxError'
                 let g:ale_cpp_cc_options=s:cpp_standard_flag . ' ' . g:ale_c_cc_options
