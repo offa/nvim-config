@@ -540,6 +540,8 @@
                 let g:ale_cpp_clangtidy_extra_options=g:ale_cpp_cc_options
                 let g:ale_c_cppcheck_options='--enable=style --suppress=syntaxError'
                 let g:ale_cpp_cppcheck_options=g:ale_c_cppcheck_options
+                let g:ale_cpp_clangcheck_options='-extra-arg=-std=c++2a'
+                let g:ale_cpp_clangd_options=g:ale_cpp_cc_options
             endif
         endif
     " }}
