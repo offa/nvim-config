@@ -519,18 +519,6 @@
 
 " Plugins {{
 
-    " Syntastic {{
-        if isdirectory(expand("~/.vim/plugged/syntastic/"))
-            let g:syntastic_always_populate_loc_list = 1
-            let g:syntastic_check_on_open = 1
-            let g:syntastic_check_on_wq = 0
-
-            if count(g:spf13_bundle_groups, 'c_cpp')
-                let g:syntastic_cpp_compiler_options = ' -std=c++2a'
-            endif
-        endif
-    " }}
-
     " ALE {{
         if isdirectory(expand("~/.vim/plugged/ale/"))
             let g:airline#extensions#ale#enabled=1
