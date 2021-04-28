@@ -143,12 +143,15 @@
             endif
             Plug 'sheerun/vim-polyglot'
             Plug 'alvan/vim-closetag'
+            Plug 'prabirshrestha/vim-lsp'
+            Plug 'mattn/vim-lsp-settings'
         endif
     " }
 
     " Snippets & AutoComplete {
         if count(g:spf13_bundle_groups, 'deoplete')
             Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+            Plug 'lighttiger2505/deoplete-vim-lsp'
             Plug 'Shougo/neosnippet'
             Plug 'Shougo/neosnippet-snippets'
             Plug 'honza/vim-snippets'
