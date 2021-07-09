@@ -145,6 +145,7 @@
             Plug 'alvan/vim-closetag'
             Plug 'prabirshrestha/vim-lsp'
             Plug 'mattn/vim-lsp-settings'
+            Plug 'rhysd/vim-lsp-ale'
         endif
     " }
 
