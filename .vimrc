@@ -87,10 +87,6 @@
     " Require a special keypress to enter multiple cursors mode
     "   let g:multi_cursor_start_key='+'
 
-    " Mappings for editing/applying spf13 config
-    "   let g:spf13_edit_config_mapping='<leader>ev'
-    "   let g:spf13_apply_config_mapping='<leader>sv'
-
 " }}
 
 " Environment {{
@@ -344,22 +340,6 @@
         let maplocalleader = '_'
     else
         let maplocalleader=g:spf13_localleader
-    endif
-
-    " The default mappings for editing and applying the spf13 configuration
-    " are <leader>ev and <leader>sv respectively. Change them to your preference
-    " by adding the following to your .vimrc.before.local file:
-    "   let g:spf13_edit_config_mapping='<leader>ec'
-    "   let g:spf13_apply_config_mapping='<leader>sc'
-    if !exists('g:spf13_edit_config_mapping')
-        let s:spf13_edit_config_mapping = '<leader>ev'
-    else
-        let s:spf13_edit_config_mapping = g:spf13_edit_config_mapping
-    endif
-    if !exists('g:spf13_apply_config_mapping')
-        let s:spf13_apply_config_mapping = '<leader>sv'
-    else
-        let s:spf13_apply_config_mapping = g:spf13_apply_config_mapping
     endif
 
     " Easier moving in tabs and windows
@@ -988,27 +968,6 @@
     " e.g. Grep current file for <search_term>: Shell grep -Hn <search_term> %
     " }}
 
-    function! s:ExpandFilenameAndExecute(command, file)
-        execute a:command . " " . expand(a:file, ":p")
-    endfunction
-
-    function! s:EditSpf13Config()
-        call <SID>ExpandFilenameAndExecute("tabedit", "~/.vimrc")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
-
-        execute bufwinnr(".vimrc") . "wincmd w"
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
-        wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
-        wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
-
-        execute bufwinnr(".vimrc.local") . "wincmd w"
-    endfunction
-
-    execute "noremap " . s:spf13_edit_config_mapping " :call <SID>EditSpf13Config()<CR>"
-    execute "noremap " . s:spf13_apply_config_mapping . " :source ~/.vimrc<CR>"
 " }}
 
 " Use local vimrc if available {{
