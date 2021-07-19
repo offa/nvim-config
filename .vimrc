@@ -496,6 +496,22 @@
 
 " Plugins {{
 
+    " LSP {{
+        if count(g:spf13_bundle_groups, 'c_cpp')
+lua << EOF
+            require'lspconfig'.clangd.setup{}
+            require'lspconfig'.cmake.setup{}
+EOF
+        endif
+
+        if count(g:spf13_bundle_groups, 'python')
+lua << EOF
+            require'lspconfig'.pylsp.setup{}
+EOF
+        endif
+    " }}
+
+
     " ALE {{
         if isdirectory(expand("~/.vim/plugged/ale/"))
             let g:airline#extensions#ale#enabled=1
