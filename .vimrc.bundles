@@ -175,7 +175,6 @@
 
     " Python {
         if count(g:spf13_bundle_groups, 'python')
-            Plug 'python-mode/python-mode'
             Plug 'vim-scripts/python_match.vim'
         endif
     " }
