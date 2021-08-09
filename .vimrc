@@ -650,20 +650,6 @@ EOF
         let g:vim_json_syntax_conceal = 0
     " }}
 
-    " PyMode {{
-        " Disable if python support not present
-        if !has('python') && !has('python3')
-            let g:pymode = 0
-        endif
-
-        if isdirectory(expand("~/.vim/plugged/python-mode"))
-            let g:pymode_lint_checkers = ['pyflakes']
-            let g:pymode_trim_whitespaces = 0
-            let g:pymode_options = 0
-            let g:pymode_rope = 0
-        endif
-    " }}
-
     " ctrlp {{
         if isdirectory(expand("~/.vim/plugged/ctrlp.vim/"))
             let g:ctrlp_working_path_mode = 'ra'
@@ -714,14 +700,13 @@ EOF
 
     " Rainbow {{
         if isdirectory(expand("~/.vim/plugged/rainbow/"))
-            let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+            let g:rainbow_active = 1
             " Disable for CMake as it breaks the syntax highlighting (#40)
             let g:rainbow_conf = {
             \   'separately': {
             \       'cmake': 0,
             \   }
             \}
-
         endif
     " }}
 
