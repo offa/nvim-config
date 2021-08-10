@@ -106,7 +106,7 @@
             Plug 'easymotion/vim-easymotion'
             Plug 'jistr/vim-nerdtree-tabs'
             Plug 'mbbill/undotree'
-            Plug 'Yggdroot/indentLine'
+            Plug 'lukas-reineke/indent-blankline.nvim'
             if !exists('g:spf13_no_views')
                 Plug 'vim-scripts/restore_view.vim'
             endif
