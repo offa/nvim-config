@@ -813,6 +813,14 @@ EOF
         endif
     " }}
 
+    " nvim-autopairs {{
+        if isdirectory(expand("~/.vim/plugged/nvim-autopairs/"))
+lua << EOF
+        require('nvim-autopairs').setup{}
+EOF
+        endif
+    " }}
+
 " }}
 
 " GUI Settings {{
