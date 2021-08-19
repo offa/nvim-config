@@ -505,6 +505,10 @@
         if count(g:spf13_bundle_groups, 'python')
             :lua require'lspconfig'.pylsp.setup{}
         endif
+
+        if count(g:spf13_bundle_groups, 'latex')
+            :lua require'lspconfig'.texlab.setup{}
+        endif
     " }}
 
 
