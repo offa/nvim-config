@@ -60,9 +60,6 @@
     " expands it and jumps between fields.
     "   let g:spf13_noninvasive_completion = 1
 
-    " Don't turn conceallevel or concealcursor
-    "   let g:spf13_no_conceal = 1
-
     " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
     " Indent guides will attempt to set your colors smartly. If you
     " want to control them yourself, do it here.
