@@ -501,7 +501,6 @@
         endif
     " }}
 
-
     " ALE {{
         if isdirectory(expand("~/.vim/plugged/ale/"))
             let g:airline#extensions#ale#enabled=1
@@ -569,12 +568,6 @@
         endif
     " }}
 
-    " Misc {{
-        if isdirectory(expand("~/.vim/plugged/nerdtree"))
-            let g:NERDShutUp=1
-        endif
-    " }}
-
     " Ctags {{
         set tags=./tags;/,~/.vimtags
 
@@ -587,6 +580,8 @@
 
     " NerdTree {{
         if isdirectory(expand("~/.vim/plugged/nerdtree"))
+            let g:NERDShutUp=1
+
             map <C-e> <plug>NERDTreeTabsToggle<CR>
             map <leader>e :NERDTreeFind<CR>
             nmap <leader>nt :NERDTreeFind<CR>
