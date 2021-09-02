@@ -230,13 +230,6 @@
         endif
     " }
 
-    " Gist {
-        if count(g:spf13_bundle_groups, 'gist')
-            Plug 'mattn/webapi-vim'
-            Plug 'mattn/gist-vim'
-        endif
-    " }
-
     " Latex {
         if count(g:spf13_bundle_groups, 'latex')
             Plug 'lervag/vimtex'
