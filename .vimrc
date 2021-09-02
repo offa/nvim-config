@@ -573,9 +573,6 @@
         if isdirectory(expand("~/.vim/plugged/nerdtree"))
             let g:NERDShutUp=1
         endif
-        if isdirectory(expand("~/.vim/plugged/matchit.zip"))
-            let b:match_ignorecase = 1
-        endif
     " }}
 
     " Ctags {{
