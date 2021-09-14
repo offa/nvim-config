@@ -241,7 +241,6 @@
             Plug 'rust-lang/rust.vim'
             Plug 'greyblake/vim-preview'
             Plug 'cespare/vim-toml'
-            Plug 'saltstack/salt-vim'
         endif
     " }
 
