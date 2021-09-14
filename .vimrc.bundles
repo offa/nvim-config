@@ -236,11 +236,6 @@
         endif
     " }
 
-    " Misc {
-        if count(g:spf13_bundle_groups, 'misc')
-        endif
-    " }
-
     endif
 
     " Use local bundles config if available {
