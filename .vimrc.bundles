@@ -238,7 +238,6 @@
 
     " Misc {
         if count(g:spf13_bundle_groups, 'misc')
-            Plug 'greyblake/vim-preview'
             Plug 'cespare/vim-toml'
         endif
     " }
