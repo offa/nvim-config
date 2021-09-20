@@ -68,7 +68,7 @@
         if count(g:spf13_bundle_groups, 'general')
             " Themes
             Plug 'joshdick/onedark.vim'
-            Plug 'morhetz/gruvbox'
+            Plug 'gruvbox-community/gruvbox'
 
             " Airline
             Plug 'vim-airline/vim-airline'
