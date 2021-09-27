@@ -34,7 +34,7 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 
 ## Customization
 
-The are *optional* `*.local` files for customization (*italic*); those in bold are provided. Configurations is loaded in order:
+There are *optional* `*.local` files for customization (*italic*); those in bold are provided. Configurations is loaded in order:
 
 1. *.vimrc.before.local*
 1. **.vimrc.bundles**
