@@ -202,14 +202,6 @@
         endif
     " }
 
-    " Elixir {
-        if count(g:spf13_bundle_groups, 'elixir')
-            Plug 'elixir-lang/vim-elixir'
-            Plug 'carlosgaldino/elixir-snippets'
-            Plug 'mattreduce/vim-mix'
-        endif
-    " }
-
     " Latex {
         if count(g:spf13_bundle_groups, 'latex')
             Plug 'lervag/vimtex'
