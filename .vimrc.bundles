@@ -202,12 +202,6 @@
         endif
     " }
 
-    " Puppet {
-        if count(g:spf13_bundle_groups, 'puppet')
-            Plug 'rodjek/vim-puppet'
-        endif
-    " }
-
     " Elixir {
         if count(g:spf13_bundle_groups, 'elixir')
             Plug 'elixir-lang/vim-elixir'
