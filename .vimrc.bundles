@@ -172,14 +172,6 @@
         endif
     " }
 
-    " Scala {
-        if count(g:spf13_bundle_groups, 'scala')
-            Plug 'derekwyatt/vim-scala'
-            Plug 'derekwyatt/vim-sbt'
-            Plug 'xptemplate'
-        endif
-    " }
-
     " Haskell {
         if count(g:spf13_bundle_groups, 'haskell')
             Plug 'travitch/hasksyn'
