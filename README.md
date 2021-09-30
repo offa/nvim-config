@@ -22,16 +22,6 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 1. Run `nvim +PlugInstall` to install the plugins
 
 
-## Updating
-
-| *Update of …*       |                     |
-|--------------------:|:-------------------:|
-| | | |
-| **Config files:**   | `git pull`          |
-| **Plugins:**        | `nvim +PlugUpdate`  |
-| **Plugin Manager:** | `nvim +PlugUpgrade` |
-
-
 ## Customization
 
 There are *optional* `*.local` files for customization (*italic*); those in bold are provided. Configurations is loaded in order:
