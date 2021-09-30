@@ -172,21 +172,6 @@
         endif
     " }
 
-    " Haskell {
-        if count(g:spf13_bundle_groups, 'haskell')
-            Plug 'travitch/hasksyn'
-            Plug 'dag/vim2hs'
-            Plug 'Twinside/vim-haskellConceal'
-            Plug 'Twinside/vim-haskellFold'
-            Plug 'lukerandall/haskellmode-vim'
-            Plug 'eagletmt/neco-ghc'
-            Plug 'eagletmt/ghcmod-vim'
-            Plug 'Shougo/vimproc.vim'
-            Plug 'adinapoli/cumino'
-            Plug 'bitc/vim-hdevtools'
-        endif
-    " }
-
     " HTML {
         if count(g:spf13_bundle_groups, 'html')
             Plug 'hail2u/vim-css3-syntax'
