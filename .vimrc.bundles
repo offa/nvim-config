@@ -173,12 +173,6 @@
         endif
     " }
 
-    " Ruby {
-        if count(g:spf13_bundle_groups, 'ruby')
-            Plug 'tpope/vim-rails'
-        endif
-    " }
-
     " Latex {
         if count(g:spf13_bundle_groups, 'latex')
             Plug 'lervag/vimtex'
