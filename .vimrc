@@ -529,13 +529,6 @@
         endif
     " }}
 
-    " PIV {{
-        if isdirectory(expand("~/.vim/plugged/PIV"))
-            let g:DisableAutoPHPFolding = 0
-            let g:PIVAutoClose = 0
-        endif
-    " }}
-
     " Ctags {{
         set tags=./tags;/,~/.vimtags
 
