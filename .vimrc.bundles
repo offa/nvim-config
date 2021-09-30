@@ -216,12 +216,6 @@
         endif
     " }
 
-    " Go Lang {
-        if count(g:spf13_bundle_groups, 'go')
-            Plug 'fatih/vim-go'
-        endif
-    " }
-
     " Elixir {
         if count(g:spf13_bundle_groups, 'elixir')
             Plug 'elixir-lang/vim-elixir'
