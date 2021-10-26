@@ -72,13 +72,12 @@ checkProgram() {
 
 info "Installation of nvim config"
 
-# Ensure config directory
-mkdir -p ${NVIM_CONF_DIR}
-
-# Check Nvim
+# Check required applications
 checkProgram nvim
 checkProgram curl
 
+# Ensure config directory
+mkdir -p ${NVIM_CONF_DIR}
 
 # Create backup of files if already existing
 backupIfExisting ${RC_DIR}/.vimrc
