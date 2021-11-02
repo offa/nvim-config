@@ -101,6 +101,7 @@
             Plug 'kana/vim-textobj-indent'
             Plug 'gcmt/wildfire.vim'
             Plug 'ervandew/supertab'
+            Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
         endif
     " }
 

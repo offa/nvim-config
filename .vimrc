@@ -762,6 +762,15 @@
         endif
     " }}
 
+    " wilder.nvim {{
+    if isdirectory(expand("~/.vim/plugged/wilder.nvim"))
+        call wilder#setup({'modes': [':', '/', '?']})
+        call wilder#set_option('renderer', wilder#popupmenu_renderer({
+                    \ 'highlighter': wilder#basic_highlighter(),
+                    \ }))
+        endif
+    " }}
+
 " }}
 
 " GUI Settings {{
