@@ -102,6 +102,7 @@
             Plug 'gcmt/wildfire.vim'
             Plug 'ervandew/supertab'
             Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+            Plug 'kevinhwang91/nvim-hlslens'
         endif
     " }
 
