@@ -32,7 +32,7 @@
 
           " Be nice and check for multi_byte even if the config requires
           " multi_byte support most of the time
-          if has("multi_byte")
+          if has('multi_byte')
             " Windows cmd.exe still uses cp850. If Windows ever moved to
             " Powershell as the primary terminal, this would be utf-8
             set termencoding=cp850
@@ -62,7 +62,7 @@
     " To override all the included bundles, add the following to your
     " .vimrc.bundles.local file:
     "   let g:override_spf13_bundles = 1
-    if !exists("g:override_spf13_bundles")
+    if !exists('g:override_spf13_bundles')
 
     " General {
         if count(g:spf13_bundle_groups, 'general')
@@ -184,7 +184,7 @@
     endif
 
     " Use local bundles config if available {
-        if filereadable(expand("~/.vimrc.bundles.local"))
+        if filereadable(expand('~/.vimrc.bundles.local'))
             source ~/.vimrc.bundles.local
         endif
     " }
