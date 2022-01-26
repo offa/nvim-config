@@ -97,7 +97,7 @@
 
     " Arrow Key Fix {{
         " https://github.com/spf13/spf13-vim/issues/780
-        if &term[:4] == 'xterm' || &term[:5] == 'screen' || &term[:3] == 'rxvt'
+        if &term[:4] ==? 'xterm' || &term[:5] ==? 'screen' || &term[:3] ==? 'rxvt'
             inoremap <silent> <C-[>OC <RIGHT>
         endif
     " }}
@@ -128,7 +128,7 @@
     function! ToggleBG()
         let s:tbg = &background
         " Inversion
-        if s:tbg == 'dark'
+        if s:tbg ==? 'dark'
             set background=light
         else
             set background=dark
@@ -534,7 +534,7 @@
 
         " Make tags placed in .git/tags file available in all levels of a repository
         let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
-        if gitroot != ''
+        if gitroot !=? ''
             let &tags = &tags . ',' . gitroot . '/.git/tags'
         endif
     " }}
@@ -789,7 +789,7 @@
             endif
         endif
     else
-        if &term == 'xterm' || &term == 'screen'
+        if &term ==? 'xterm' || &term ==? 'screen'
             set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
         endif
         "set term=builtin_ansi       " Make arrow and other keys work
