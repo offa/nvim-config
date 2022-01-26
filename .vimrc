@@ -107,7 +107,7 @@
 " Use before config if available {{
 
     " Use local before if available {
-        if filereadable(expand("~/.vimrc.before.local"))
+        if filereadable(expand('~/.vimrc.before.local'))
             source ~/.vimrc.before.local
         endif
     " }
@@ -115,7 +115,7 @@
 " }}
 
 " Use bundles config {{
-    if filereadable(expand("~/.vimrc.bundles"))
+    if filereadable(expand('~/.vimrc.bundles'))
         source ~/.vimrc.bundles
     endif
 " }}
@@ -218,11 +218,11 @@
 
 " Vim UI {{
 
-    if has("termguicolors")
+    if has('termguicolors')
         set termguicolors
     endif
 
-    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/plugged/gruvbox/colors/gruvbox.vim"))
+    if !exists('g:override_spf13_bundles') && filereadable(expand('~/.vim/plugged/gruvbox/colors/gruvbox.vim'))
         " Set color schemes
         color gruvbox
         let g:airline_theme = 'gruvbox'
@@ -492,7 +492,7 @@
     " }}
 
     " ALE {{
-        if isdirectory(expand("~/.vim/plugged/ale/"))
+        if isdirectory(expand('~/.vim/plugged/ale/'))
             let g:airline#extensions#ale#enabled=1
             if count(g:spf13_bundle_groups, 'c_cpp')
                 let s:cpp_standard_flag='-std=c++20'
@@ -540,7 +540,7 @@
     " }}
 
     " NerdTree {{
-        if isdirectory(expand("~/.vim/plugged/nerdtree"))
+        if isdirectory(expand('~/.vim/plugged/nerdtree'))
             let g:NERDShutUp=1
 
             map <C-e> <plug>NERDTreeTabsToggle<CR>
@@ -559,7 +559,7 @@
     " }}
 
     " Tabularize {{
-        if isdirectory(expand("~/.vim/plugged/tabular"))
+        if isdirectory(expand('~/.vim/plugged/tabular'))
             nmap <Leader>a& :Tabularize /&<CR>
             vmap <Leader>a& :Tabularize /&<CR>
             nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
@@ -581,7 +581,7 @@
 
     " Session List {{
         set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-        if isdirectory(expand("~/.vim/plugged/sessionman.vim/"))
+        if isdirectory(expand('~/.vim/plugged/sessionman.vim/'))
             nmap <leader>sl :SessionList<CR>
             nmap <leader>ss :SessionSave<CR>
             nmap <leader>sc :SessionClose<CR>
@@ -594,7 +594,7 @@
     " }}
 
     " ctrlp {{
-        if isdirectory(expand("~/.vim/plugged/ctrlp.vim/"))
+        if isdirectory(expand('~/.vim/plugged/ctrlp.vim/'))
             let g:ctrlp_working_path_mode = 'ra'
             nnoremap <silent> <D-t> :CtrlP<CR>
             nnoremap <silent> <D-r> :CtrlPMRU<CR>
@@ -625,7 +625,7 @@
                 \ 'fallback': s:ctrlp_fallback
             \ }
 
-            if isdirectory(expand("~/.vim/plugged/ctrlp-funky/"))
+            if isdirectory(expand('~/.vim/plugged/ctrlp-funky/'))
                 " CtrlP extensions
                 let g:ctrlp_extensions = ['funky']
 
@@ -636,13 +636,13 @@
     " }}
 
     " TagBar {{
-        if isdirectory(expand("~/.vim/plugged/tagbar/"))
+        if isdirectory(expand('~/.vim/plugged/tagbar/'))
             nnoremap <silent> <leader>tt :TagbarToggle<CR>
         endif
     " }}
 
     " Rainbow {{
-        if isdirectory(expand("~/.vim/plugged/rainbow/"))
+        if isdirectory(expand('~/.vim/plugged/rainbow/'))
             let g:rainbow_active = 1
             " Disable for CMake as it breaks the syntax highlighting (#40)
             let g:rainbow_conf = {
@@ -654,7 +654,7 @@
     " }}
 
     " Fugitive {{
-        if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
+        if isdirectory(expand('~/.vim/plugged/vim-fugitive/'))
             nnoremap <silent> <leader>gs :Git<CR>
             nnoremap <silent> <leader>gd :Gdiffsplit<CR>
             nnoremap <silent> <leader>gc :Git commit<CR>
@@ -675,7 +675,7 @@
     " }}
 
     " SuperTab {{
-        if isdirectory(expand("~/.vim/plugged/supertab/"))
+        if isdirectory(expand('~/.vim/plugged/supertab/'))
             let g:SuperTabDefaultCompletionType = "<c-n>"
         endif
     " }}
@@ -708,7 +708,7 @@
     " }}
 
     " UndoTree {{
-        if isdirectory(expand("~/.vim/plugged/undotree/"))
+        if isdirectory(expand('~/.vim/plugged/undotree/'))
             nnoremap <Leader>u :UndotreeToggle<CR>
             " If undotree is opened, it is likely one wants to interact with it.
             let g:undotree_SetFocusWhenToggle=1
@@ -733,7 +733,7 @@
 
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
-        if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
+        if isdirectory(expand('~/.vim/plugged/vim-airline-themes/'))
             if !exists('g:airline_theme')
                 let g:airline_theme = 'solarized'
             endif
@@ -745,25 +745,25 @@
 
     " vim-cpp-enhanced-highlight {{
         " Set syntax highlighting options.
-        if isdirectory(expand("~/.vim/plugged/vim-cpp-enhanced-highlight/"))
+        if isdirectory(expand('~/.vim/plugged/vim-cpp-enhanced-highlight/'))
             let g:cpp_concepts_highlight = 1
         endif
     " }}
 
     " vim-closetag {{
-        if isdirectory(expand("~/.vim/plugged/vim-closetag/"))
+        if isdirectory(expand('~/.vim/plugged/vim-closetag/'))
             let g:closetag_filetypes = 'xml,html,xhtml,phtml'
         endif
     " }}
 
     " nvim-autopairs {{
-        if isdirectory(expand("~/.vim/plugged/nvim-autopairs/"))
+        if isdirectory(expand('~/.vim/plugged/nvim-autopairs/'))
             :lua require('nvim-autopairs').setup{}
         endif
     " }}
 
     " wilder.nvim {{
-    if isdirectory(expand("~/.vim/plugged/wilder.nvim"))
+    if isdirectory(expand('~/.vim/plugged/wilder.nvim'))
         call wilder#setup({'modes': [':', '/', '?']})
         call wilder#set_option('renderer', wilder#popupmenu_renderer({
                     \ 'highlighter': wilder#basic_highlighter(),
@@ -779,12 +779,12 @@
     if has('gui_running')
         set guioptions-=T           " Remove the toolbar
         set lines=40                " 40 lines of text instead of 24
-        if !exists("g:spf13_no_big_font")
-            if LINUX() && has("gui_running")
+        if !exists('g:spf13_no_big_font')
+            if LINUX() && has('gui_running')
                 set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 11,Consolas\ Regular\ 12,Courier\ New\ Regular\ 14
-            elseif OSX() && has("gui_running")
+            elseif OSX() && has('gui_running')
                 set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
-            elseif WINDOWS() && has("gui_running")
+            elseif WINDOWS() && has('gui_running')
                 set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
             endif
         endif
@@ -801,7 +801,7 @@
 
     " Initialize directories {{
     function! InitializeDirectories()
-        let parent = $HOME . "/.vim"
+        let parent = $HOME . '/.vim'
         let prefix = 'vim'
         let dir_list = {
                     \ 'backup': 'backupdir',
@@ -825,17 +825,17 @@
 
         for [dirname, settingname] in items(dir_list)
             let directory = common_dir . dirname . '/'
-            if exists("*mkdir")
+            if exists('*mkdir')
                 if !isdirectory(directory)
                     call mkdir(directory, 'p')
                 endif
             endif
             if !isdirectory(directory)
-                echo "Warning: Unable to create directory: " . directory
-                echo "Try: mkdir -p " . directory
+                echo 'Warning: Unable to create directory: ' . directory
+                echo 'Try: mkdir -p ' . directory
             else
-                let directory = substitute(directory, " ", "\\\\ ", "g")
-                exec "set " . settingname . "=" . directory
+                let directory = substitute(directory, ' ', '\\\\ ', 'g')
+                exec 'set ' . settingname . '=' . directory
             endif
         endfor
     endfunction
@@ -847,7 +847,7 @@
         redir => bufoutput
         buffers!
         redir END
-        let idx = stridx(bufoutput, "NERD_tree")
+        let idx = stridx(bufoutput, 'NERD_tree')
         if idx > -1
             NERDTreeMirror
             NERDTreeFind
@@ -882,14 +882,14 @@
 " }}
 
 " Use local vimrc if available {{
-    if filereadable(expand("~/.vimrc.local"))
+    if filereadable(expand('~/.vimrc.local'))
         source ~/.vimrc.local
     endif
 " }}
 
 " Use local gvimrc if available and gui is running {{
     if has('gui_running')
-        if filereadable(expand("~/.gvimrc.local"))
+        if filereadable(expand('~/.gvimrc.local'))
             source ~/.gvimrc.local
         endif
     endif
