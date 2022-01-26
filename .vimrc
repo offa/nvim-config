@@ -97,7 +97,7 @@
 
     " Arrow Key Fix {{
         " https://github.com/spf13/spf13-vim/issues/780
-        if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
+        if &term[:4] == 'xterm' || &term[:5] == 'screen' || &term[:3] == 'rxvt'
             inoremap <silent> <C-[>OC <RIGHT>
         endif
     " }}
@@ -128,7 +128,7 @@
     function! ToggleBG()
         let s:tbg = &background
         " Inversion
-        if s:tbg == "dark"
+        if s:tbg == 'dark'
             set background=light
         else
             set background=dark
@@ -183,7 +183,7 @@
     "   let g:spf13_no_restore_cursor = 1
     if !exists('g:spf13_no_restore_cursor')
         function! ResCur()
-            if line("'\"") <= line("$")
+            if line("'\"") <= line('$')
                 silent! normal! g`"
                 return 1
             endif
@@ -344,14 +344,14 @@
     if !exists('g:spf13_no_wrapRelMotion')
         " Same for 0, home, end, etc
         function! WrapRelativeMotion(key, ...)
-            let vis_sel=""
+            let vis_sel=''
             if a:0
-                let vis_sel="gv"
+                let vis_sel='gv'
             endif
             if &wrap
-                execute "normal!" vis_sel . "g" . a:key
+                execute 'normal!' vis_sel . 'g' . a:key
             else
-                execute "normal!" vis_sel . a:key
+                execute 'normal!' vis_sel . a:key
             endif
         endfunction
 
@@ -386,7 +386,7 @@
 
     " Stupid shift key fixes
     if !exists('g:spf13_no_keyfixes')
-        if has("user_commands")
+        if has('user_commands')
             command! -bang -nargs=* -complete=file E e<bang> <args>
             command! -bang -nargs=* -complete=file W w<bang> <args>
             command! -bang -nargs=* -complete=file Wq wq<bang> <args>
@@ -614,7 +614,7 @@
             else
                 let s:ctrlp_fallback = 'find %s -type f'
             endif
-            if exists("g:ctrlp_user_command")
+            if exists('g:ctrlp_user_command')
                 unlet g:ctrlp_user_command
             endif
             let g:ctrlp_user_command = {
@@ -676,7 +676,7 @@
 
     " SuperTab {{
         if isdirectory(expand('~/.vim/plugged/supertab/'))
-            let g:SuperTabDefaultCompletionType = "<c-n>"
+            let g:SuperTabDefaultCompletionType = '<c-n>'
         endif
     " }}
 
