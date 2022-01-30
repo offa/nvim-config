@@ -462,10 +462,6 @@
     " Easier formatting
     nnoremap <silent> <leader>q gwip
 
-    " FIXME: Revert this f70be548
-    " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
-    map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
-
 " }}
 
 " Plugins {{
@@ -773,6 +769,11 @@
     if has('gui_running')
         set guioptions-=T           " Remove the toolbar
         set lines=40                " 40 lines of text instead of 24
+
+        " FIXME: Revert this f70be548
+        " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
+        map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+
         if !exists('g:spf13_no_big_font')
             if LINUX() && has('gui_running')
                 set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 11,Consolas\ Regular\ 12,Courier\ New\ Regular\ 14
