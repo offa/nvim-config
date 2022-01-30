@@ -288,8 +288,6 @@
     set splitbelow                  " Puts new split windows to the bottom of the current
     "set matchpairs+=<:>             " Match, to be used with %
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
-    "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
-    "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
     " preceding line best in a plugin but here for now.
