@@ -154,8 +154,11 @@
     " your .vimrc.before.local file:
     "   let g:spf13_no_autochdir = 1
     if !exists('g:spf13_no_autochdir')
-        autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-        " Always switch to the current file directory
+        augroup autochdir
+            autocmd!
+            " Always switch to the current file directory
+            autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+        augroup END
     endif
 
     "set autowrite                       " Automatically write a file when leaving a modified buffer
@@ -169,9 +172,12 @@
     set iskeyword-=#                    " '#' is an end of word designator
     set iskeyword-=-                    " '-' is an end of word designator
 
-    " Instead of reverting the cursor to the last position in the buffer, we
-    " set it to the first line when editing a git commit message
-    au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+    augroup gitcommitsettings
+        autocmd!
+        " Instead of reverting the cursor to the last position in the buffer, we
+        " set it to the first line when editing a git commit message
+        au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+    augroup END
 
     " http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
     " Restore cursor to file position in previous editing session
@@ -660,7 +666,7 @@
             nnoremap <silent> <leader>gu :SignifyRefresh<CR>
 
             " Refresh Signify after commit
-            au FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
+            au gitcommitsettings FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
         endif
     " }}
 
