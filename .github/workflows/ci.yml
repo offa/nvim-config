@@ -12,4 +12,4 @@ jobs:
       - name: Install Dependencies
         run: pip install -U vim-vint
       - name: Vint
-        run: vint --color --enable-neovim .vimrc .vimrc.bundles
+        run: vint --color --enable-neovim .vimrc*
