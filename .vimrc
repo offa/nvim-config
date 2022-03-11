@@ -78,6 +78,10 @@
         silent function! WINDOWS()
             return  (has('win32') || has('win64'))
         endfunction
+
+        silent function! GUI()
+            return has('gui_running')
+        endfunction
     " }}
 
     " Basics {{
@@ -766,7 +770,7 @@
 " GUI Settings {{
 
     " GVIM- (here instead of .gvimrc)
-    if has('gui_running')
+    if GUI()
         set guioptions-=T           " Remove the toolbar
         set lines=40                " 40 lines of text instead of 24
 
@@ -775,11 +779,11 @@
         map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
         if !exists('g:spf13_no_big_font')
-            if LINUX() && has('gui_running')
+            if LINUX() && GUI()
                 set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 11,Consolas\ Regular\ 12,Courier\ New\ Regular\ 14
-            elseif OSX() && has('gui_running')
+            elseif OSX() && GUI()
                 set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
-            elseif WINDOWS() && has('gui_running')
+            elseif WINDOWS() && GUI()
                 set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
             endif
         endif
@@ -883,7 +887,7 @@
 " }}
 
 " Use local gvimrc if available and gui is running {{
-    if has('gui_running')
+    if GUI()
         if filereadable(expand('~/.gvimrc.local'))
             source ~/.gvimrc.local
         endif
