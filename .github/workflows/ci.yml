@@ -11,5 +11,5 @@ jobs:
         uses: actions/checkout@main
       - name: Install Dependencies
         run: pip install -U vim-vint
-      - name: Test
+      - name: Vint
         run: vint --color --enable-neovim .vimrc*
