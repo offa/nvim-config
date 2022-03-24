@@ -28,7 +28,6 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 There are *optional* `*.local` files for customization (*italic*); those in bold are provided. Configurations is loaded in order:
 
 1. *.vimrc.before.local*
-1. **.vimrc.bundles**
 1. *.vimrc.bundles.local*
 1. **.vimrc**
 1. *.vimrc.local*

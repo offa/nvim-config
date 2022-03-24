@@ -117,7 +117,7 @@
 
 " }}
 
-" Plugins {
+" Plugins {{
     call plug#begin('~/.vim/plugged')
 
     " In your .vimrc.before.local file
@@ -258,7 +258,6 @@
 
     call plug#end()
 
-" }
 " }}
 
 " General {{
