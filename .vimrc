@@ -117,10 +117,148 @@
 
 " }}
 
-" Use bundles config {{
-    if filereadable(expand('~/.vimrc.bundles'))
-        source ~/.vimrc.bundles
+" Plugins {
+    call plug#begin('~/.vim/plugged')
+
+    " In your .vimrc.before.local file
+    " list only the plugin groups you will use
+    if !exists('g:spf13_bundle_groups')
+        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'c_cpp', 'python', ]
     endif
+
+    " To override all the included bundles, add the following to your
+    " .vimrc.bundles.local file:
+    "   let g:override_spf13_bundles = 1
+    if !exists('g:override_spf13_bundles')
+
+    " General {
+        if count(g:spf13_bundle_groups, 'general')
+            " Themes
+            Plug 'joshdick/onedark.vim'
+            Plug 'gruvbox-community/gruvbox'
+
+            " Airline
+            Plug 'vim-airline/vim-airline'
+            Plug 'vim-airline/vim-airline-themes'
+
+            Plug 'raviqqe/vim-nonblank'
+            Plug 'roman/golden-ratio'
+            Plug 'RRethy/vim-illuminate'
+            Plug 'jeetsukumaran/vim-buffergator'
+            Plug 'scrooloose/nerdtree'
+            Plug 'tpope/vim-surround'
+            Plug 'tpope/vim-repeat'
+            Plug 'rhysd/conflict-marker.vim'
+            Plug 'windwp/nvim-autopairs'
+            Plug 'ctrlpvim/ctrlp.vim'
+            Plug 'tacahiroy/ctrlp-funky'
+            Plug 'terryma/vim-multiple-cursors'
+            Plug 'vim-scripts/sessionman.vim'
+            Plug 'easymotion/vim-easymotion'
+            Plug 'jistr/vim-nerdtree-tabs'
+            Plug 'mbbill/undotree'
+            Plug 'lukas-reineke/indent-blankline.nvim'
+            if !exists('g:spf13_no_views')
+                Plug 'vim-scripts/restore_view.vim'
+            endif
+            Plug 'mhinz/vim-signify'
+            Plug 'tpope/vim-abolish'
+            Plug 'osyo-manga/vim-over'
+            Plug 'kana/vim-textobj-user'
+            Plug 'kana/vim-textobj-indent'
+            Plug 'gcmt/wildfire.vim'
+            Plug 'ervandew/supertab'
+            Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+            Plug 'kevinhwang91/nvim-hlslens'
+        endif
+    " }
+
+    " Writing {
+        if count(g:spf13_bundle_groups, 'writing')
+            Plug 'reedes/vim-litecorrect'
+            Plug 'reedes/vim-textobj-sentence'
+            Plug 'reedes/vim-textobj-quote'
+            Plug 'reedes/vim-wordy'
+        endif
+    " }
+
+    " General Programming {
+        if count(g:spf13_bundle_groups, 'programming')
+            Plug 'dense-analysis/ale'
+            Plug 'tpope/vim-fugitive'
+            Plug 'scrooloose/nerdcommenter'
+            Plug 'godlygeek/tabular'
+            Plug 'luochen1990/rainbow'
+            Plug 'sbdchd/neoformat'
+            if executable('ctags')
+                Plug 'majutsushi/tagbar'
+            endif
+            Plug 'sheerun/vim-polyglot'
+            Plug 'alvan/vim-closetag'
+            Plug 'neovim/nvim-lspconfig'
+            Plug 'rhysd/vim-lsp-ale'
+        endif
+    " }
+
+    " Snippets & AutoComplete {
+        if count(g:spf13_bundle_groups, 'deoplete')
+            Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+            Plug 'deoplete-plugins/deoplete-lsp'
+            Plug 'Shougo/neosnippet'
+            Plug 'Shougo/neosnippet-snippets'
+            Plug 'honza/vim-snippets'
+        endif
+    " }
+
+    " C / C++ {
+        if count(g:spf13_bundle_groups, 'c_cpp')
+            Plug 'octol/vim-cpp-enhanced-highlight'
+            Plug 'pboettch/vim-cmake-syntax'
+        endif
+    " }
+
+    " Python {
+        if count(g:spf13_bundle_groups, 'python')
+            Plug 'vim-scripts/python_match.vim'
+        endif
+    " }
+
+    " Javascript {
+        if count(g:spf13_bundle_groups, 'javascript')
+            Plug 'elzr/vim-json'
+            Plug 'groenewege/vim-less'
+            Plug 'pangloss/vim-javascript'
+            Plug 'briancollins/vim-jst'
+            Plug 'kchmck/vim-coffee-script'
+        endif
+    " }
+
+    " HTML {
+        if count(g:spf13_bundle_groups, 'html')
+            Plug 'hail2u/vim-css3-syntax'
+            Plug 'gorodinskiy/vim-coloresque'
+            Plug 'tpope/vim-haml'
+            Plug 'mattn/emmet-vim'
+        endif
+    " }
+
+    " Latex {
+        if count(g:spf13_bundle_groups, 'latex')
+            Plug 'lervag/vimtex'
+        endif
+    " }
+
+    endif
+
+    " Use local bundles config if available {
+        if filereadable(expand('~/.vimrc.bundles.local'))
+            source ~/.vimrc.bundles.local
+        endif
+    " }
+
+    call plug#end()
+
+" }
 " }}
 
 " General {{
@@ -468,7 +606,7 @@
 
 " }}
 
-" Plugins {{
+" Plugin Configurations {{
 
     " LSP {{
         if count(g:spf13_bundle_groups, 'c_cpp')
