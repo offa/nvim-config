@@ -365,11 +365,9 @@
         set termguicolors
     endif
 
-    if !exists('g:override_spf13_bundles') && filereadable(expand('~/.vim/plugged/gruvbox/colors/gruvbox.vim'))
-        " Set color schemes
-        color gruvbox
-        let g:airline_theme = 'gruvbox'
-    endif
+    " Set color schemes
+    color gruvbox
+    let g:airline_theme = 'gruvbox'
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
