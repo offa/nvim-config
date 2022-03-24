@@ -60,10 +60,6 @@
     " expands it and jumps between fields.
     "   let g:spf13_noninvasive_completion = 1
 
-    " Leave the default font and size in GVim
-    " To set your own font, do it from ~/.vimrc.local
-    "   let g:spf13_no_big_font = 1
-
 " }}
 
 " Environment {{
@@ -908,16 +904,6 @@
         " FIXME: Revert this f70be548
         " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
         map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
-
-        if !exists('g:spf13_no_big_font')
-            if LINUX() && GUI()
-                set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 11,Consolas\ Regular\ 12,Courier\ New\ Regular\ 14
-            elseif OSX() && GUI()
-                set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
-            elseif WINDOWS() && GUI()
-                set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
-            endif
-        endif
     else
         if &term ==? 'xterm' || &term ==? 'screen'
             set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
