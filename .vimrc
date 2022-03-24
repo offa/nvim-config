@@ -80,12 +80,6 @@
         endfunction
     " }}
 
-    " Basics {{
-        if !WINDOWS()
-            set shell=/bin/sh
-        endif
-    " }}
-
     " Windows Compatible {{
         " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
         " across (heterogeneous) systems easier.
