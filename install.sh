@@ -58,7 +58,6 @@ installPluginManager() {
     if [ "$?" -ne 0 ]; then
         fail "Downloading Plugin manager failed"
     fi
-
 }
 
 checkProgram() {
@@ -81,13 +80,11 @@ mkdir -p ${NVIM_CONF_DIR}
 
 # Create backup of files if already existing
 backupIfExisting ${RC_DIR}/.vimrc
-backupIfExisting ${RC_DIR}/.vimrc.bundles
 backupIfExisting ${NVIM_CONF_DIR}/init.vim
 
 
 # Create links
 linkConfig .vimrc
-linkConfig .vimrc.bundles
 createLink ${RC_DIR}/.vimrc ${NVIM_CONF_DIR}/init.vim
 ok "Links created"
 
