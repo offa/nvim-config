@@ -472,16 +472,16 @@
 
     " LSP {{
         if count(g:spf13_bundle_groups, 'c_cpp')
-            :lua require'lspconfig'.clangd.setup{}
-            :lua require'lspconfig'.cmake.setup{}
+            lua require'lspconfig'.clangd.setup{}
+            lua require'lspconfig'.cmake.setup{}
         endif
 
         if count(g:spf13_bundle_groups, 'python')
-            :lua require'lspconfig'.pylsp.setup{}
+            lua require'lspconfig'.pylsp.setup{}
         endif
 
         if count(g:spf13_bundle_groups, 'latex')
-            :lua require'lspconfig'.texlab.setup{}
+            lua require'lspconfig'.texlab.setup{}
         endif
     " }}
 
@@ -752,7 +752,7 @@
 
     " nvim-autopairs {{
         if isdirectory(expand('~/.vim/plugged/nvim-autopairs/'))
-            :lua require('nvim-autopairs').setup{}
+            lua require('nvim-autopairs').setup{}
         endif
     " }}
 
