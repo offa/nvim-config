@@ -594,6 +594,10 @@
 " }}
 
 " Plugin Configurations {{
+    silent function! PluginActive(plugin)
+        return isdirectory(expand('~/.vim/plugged/' . a:plugin))
+    endfunction
+
 
     " LSP {{
         if count(g:spf13_bundle_groups, 'c_cpp')
@@ -611,7 +615,7 @@
     " }}
 
     " ALE {{
-        if isdirectory(expand('~/.vim/plugged/ale/'))
+        if PluginActive('ale')
             let g:airline#extensions#ale#enabled=1
             if count(g:spf13_bundle_groups, 'c_cpp')
                 let s:cpp_standard_flag='-std=c++20'
@@ -659,7 +663,7 @@
     " }}
 
     " NerdTree {{
-        if isdirectory(expand('~/.vim/plugged/nerdtree'))
+        if PluginActive('nerdtree')
             let g:NERDShutUp=1
 
             map <C-e> <plug>NERDTreeTabsToggle<CR>
@@ -678,7 +682,7 @@
     " }}
 
     " Tabularize {{
-        if isdirectory(expand('~/.vim/plugged/tabular'))
+        if PluginActive('tabular')
             nmap <Leader>a& :Tabularize /&<CR>
             vmap <Leader>a& :Tabularize /&<CR>
             nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
@@ -700,7 +704,7 @@
 
     " Session List {{
         set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-        if isdirectory(expand('~/.vim/plugged/sessionman.vim/'))
+        if PluginActive('sessionman.vim')
             nmap <leader>sl :SessionList<CR>
             nmap <leader>ss :SessionSave<CR>
             nmap <leader>sc :SessionClose<CR>
@@ -713,7 +717,7 @@
     " }}
 
     " ctrlp {{
-        if isdirectory(expand('~/.vim/plugged/ctrlp.vim/'))
+        if PluginActive('ctrlp.vim')
             let g:ctrlp_working_path_mode = 'ra'
             nnoremap <silent> <D-t> :CtrlP<CR>
             nnoremap <silent> <D-r> :CtrlPMRU<CR>
@@ -744,7 +748,7 @@
                 \ 'fallback': s:ctrlp_fallback
             \ }
 
-            if isdirectory(expand('~/.vim/plugged/ctrlp-funky/'))
+            if PluginActive('ctrlp-funky')
                 " CtrlP extensions
                 let g:ctrlp_extensions = ['funky']
 
@@ -755,13 +759,13 @@
     " }}
 
     " TagBar {{
-        if isdirectory(expand('~/.vim/plugged/tagbar/'))
+        if PluginActive('tagbar')
             nnoremap <silent> <leader>tt :TagbarToggle<CR>
         endif
     " }}
 
     " Rainbow {{
-        if isdirectory(expand('~/.vim/plugged/rainbow/'))
+        if PluginActive('rainbow')
             let g:rainbow_active = 1
             " Disable for CMake as it breaks the syntax highlighting (#40)
             let g:rainbow_conf = {
@@ -773,7 +777,7 @@
     " }}
 
     " Fugitive {{
-        if isdirectory(expand('~/.vim/plugged/vim-fugitive/'))
+        if PluginActive('vim-fugitive')
             nnoremap <silent> <leader>gs :Git<CR>
             nnoremap <silent> <leader>gd :Gdiffsplit<CR>
             nnoremap <silent> <leader>gc :Git commit<CR>
@@ -794,7 +798,7 @@
     " }}
 
     " SuperTab {{
-        if isdirectory(expand('~/.vim/plugged/supertab/'))
+        if PluginActive('supertab/')
             let g:SuperTabDefaultCompletionType = '<c-n>'
         endif
     " }}
@@ -827,7 +831,7 @@
     " }}
 
     " UndoTree {{
-        if isdirectory(expand('~/.vim/plugged/undotree/'))
+        if PluginActive('undotree')
             nnoremap <Leader>u :UndotreeToggle<CR>
             " If undotree is opened, it is likely one wants to interact with it.
             let g:undotree_SetFocusWhenToggle=1
@@ -852,33 +856,32 @@
 
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
-        if isdirectory(expand('~/.vim/plugged/vim-airline-themes/'))
+        if PluginActive('vim-airline-themes')
             let g:airline#extensions#tabline#enabled=1  " Smarter Tabline
             let g:airline_powerline_fonts=1             " Powerline Fonts
         endif
     " }}
 
     " vim-cpp-enhanced-highlight {{
-        " Set syntax highlighting options.
-        if isdirectory(expand('~/.vim/plugged/vim-cpp-enhanced-highlight/'))
+        if PluginActive('vim-cpp-enhanced-highlight')
             let g:cpp_concepts_highlight = 1
         endif
     " }}
 
     " vim-closetag {{
-        if isdirectory(expand('~/.vim/plugged/vim-closetag/'))
+        if PluginActive('vim-closetag')
             let g:closetag_filetypes = 'xml,html,xhtml,phtml'
         endif
     " }}
 
     " nvim-autopairs {{
-        if isdirectory(expand('~/.vim/plugged/nvim-autopairs/'))
+        if PluginActive('nvim-autopairs')
             lua require('nvim-autopairs').setup{}
         endif
     " }}
 
     " wilder.nvim {{
-    if isdirectory(expand('~/.vim/plugged/wilder.nvim'))
+    if PluginActive('wilder.nvim')
         call wilder#setup({'modes': [':', '/', '?']})
         call wilder#set_option('renderer', wilder#popupmenu_renderer({
                     \ 'highlighter': wilder#basic_highlighter(),
