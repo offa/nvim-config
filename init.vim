@@ -105,13 +105,10 @@
 
 " }}
 
-" Use before config if available {{
-
-    " Use local before if available {
-        call SourceIfAvailable('before.vim')
-    " }
-
+" Use local before if available {{
+    call SourceIfAvailable('before.vim')
 " }}
+
 
 " Plugins {{
     call plug#begin('~/.config/nvim/plugged')
