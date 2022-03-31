@@ -902,7 +902,7 @@
 
     " Initialize directories {{
     function! InitializeDirectories()
-        let parent = $HOME . '/.vim'
+        let parent = $HOME . '/.config/nvim'
         let prefix = 'vim'
         let dir_list = {
                     \ 'backup': 'backupdir',
