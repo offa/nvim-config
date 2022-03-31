@@ -95,14 +95,20 @@
         endif
     " }}
 
+    " Support optional configurations {{
+        silent function! SourceIfAvailable(filename)
+            if filereadable(expand('~/.config/nvim/' . a:filename))
+                source '~/.config/nvim/' . a:filename
+            endif
+        endfunction()
+    " }}
+
 " }}
 
 " Use before config if available {{
 
     " Use local before if available {
-        if filereadable(expand('~/.vimrc.before.local'))
-            source ~/.vimrc.before.local
-        endif
+        call SourceIfAvailable('before.vim')
     " }
 
 " }}
@@ -241,9 +247,7 @@
     endif
 
     " Use local bundles config if available {
-        if filereadable(expand('~/.vimrc.bundles.local'))
-            source ~/.vimrc.bundles.local
-        endif
+        call SourceIfAvailable('plugins.vim')
     " }
 
     call plug#end()
@@ -945,15 +949,11 @@
 " }}
 
 " Use local vimrc if available {{
-    if filereadable(expand('~/.vimrc.local'))
-        source ~/.vimrc.local
-    endif
+    call SourceIfAvailable('local.vim')
 " }}
 
 " Use local gvimrc if available and gui is running {{
     if GUI()
-        if filereadable(expand('~/.gvimrc.local'))
-            source ~/.gvimrc.local
-        endif
+        call SourceIfAvailable('gui.vim')
     endif
 " }}
