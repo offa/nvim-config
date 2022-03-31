@@ -108,7 +108,7 @@
 " }}
 
 " Plugins {{
-    call plug#begin('~/.vim/plugged')
+    call plug#begin('~/.config/nvim/plugged')
 
     " In your .vimrc.before.local file
     " list only the plugin groups you will use
@@ -583,7 +583,7 @@
 
 " Plugin Configurations {{
     silent function! PluginActive(plugin)
-        return isdirectory(expand('~/.vim/plugged/' . a:plugin))
+        return isdirectory(expand('~/.config/nvim/plugged/' . a:plugin))
     endfunction
 
 
