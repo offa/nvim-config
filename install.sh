@@ -49,7 +49,7 @@ createLink() {
 }
 
 linkConfig() {
-    createLink $PWD/$1 ${RC_DIR}/$1
+    createLink $PWD/$1 ${NVIM_CONF_DIR}/$1
 }
 
 installPluginManager() {
@@ -84,8 +84,8 @@ backupIfExisting ${NVIM_CONF_DIR}/init.vim
 
 
 # Create links
-linkConfig .vimrc
-createLink ${RC_DIR}/.vimrc ${NVIM_CONF_DIR}/init.vim
+linkConfig init.vim
+createLink ${NVIM_CONF_DIR}/init.vim ${RC_DIR}/.vimrc
 ok "Links created"
 
 
