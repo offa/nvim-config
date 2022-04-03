@@ -103,6 +103,16 @@
         endfunction()
     " }}
 
+    " Configuration functions {{
+        silent function! BundleActive(bundle)
+            return count(g:spf13_bundle_groups, a:bundle)
+        endfunction
+
+        silent function! PluginActive(plugin)
+            return isdirectory(expand('~/.config/nvim/plugged/' . a:plugin))
+        endfunction
+    " }}
+
 " }}
 
 " Use local before if available {{
@@ -125,7 +135,7 @@
     if !exists('g:override_spf13_bundles')
 
     " General {
-        if count(g:spf13_bundle_groups, 'general')
+        if BundleActive('general')
             " Themes
             Plug 'joshdick/onedark.vim'
             Plug 'gruvbox-community/gruvbox'
@@ -167,7 +177,7 @@
     " }
 
     " Writing {
-        if count(g:spf13_bundle_groups, 'writing')
+        if BundleActive('writing')
             Plug 'reedes/vim-litecorrect'
             Plug 'reedes/vim-textobj-sentence'
             Plug 'reedes/vim-textobj-quote'
@@ -176,7 +186,7 @@
     " }
 
     " General Programming {
-        if count(g:spf13_bundle_groups, 'programming')
+        if BundleActive('programming')
             Plug 'dense-analysis/ale'
             Plug 'tpope/vim-fugitive'
             Plug 'scrooloose/nerdcommenter'
@@ -194,7 +204,7 @@
     " }
 
     " Snippets & AutoComplete {
-        if count(g:spf13_bundle_groups, 'deoplete')
+        if BundleActive('deoplete')
             Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
             Plug 'deoplete-plugins/deoplete-lsp'
             Plug 'Shougo/neosnippet'
@@ -204,20 +214,20 @@
     " }
 
     " C / C++ {
-        if count(g:spf13_bundle_groups, 'c_cpp')
+        if BundleActive('c_cpp')
             Plug 'octol/vim-cpp-enhanced-highlight'
             Plug 'pboettch/vim-cmake-syntax'
         endif
     " }
 
     " Python {
-        if count(g:spf13_bundle_groups, 'python')
+        if BundleActive('python')
             Plug 'vim-scripts/python_match.vim'
         endif
     " }
 
     " Javascript {
-        if count(g:spf13_bundle_groups, 'javascript')
+        if BundleActive('javascript')
             Plug 'elzr/vim-json'
             Plug 'groenewege/vim-less'
             Plug 'pangloss/vim-javascript'
@@ -227,7 +237,7 @@
     " }
 
     " HTML {
-        if count(g:spf13_bundle_groups, 'html')
+        if BundleActive('html')
             Plug 'hail2u/vim-css3-syntax'
             Plug 'gorodinskiy/vim-coloresque'
             Plug 'tpope/vim-haml'
@@ -236,7 +246,7 @@
     " }
 
     " Latex {
-        if count(g:spf13_bundle_groups, 'latex')
+        if BundleActive('latex')
             Plug 'lervag/vimtex'
         endif
     " }
@@ -583,22 +593,18 @@
 " }}
 
 " Plugin Configurations {{
-    silent function! PluginActive(plugin)
-        return isdirectory(expand('~/.config/nvim/plugged/' . a:plugin))
-    endfunction
-
 
     " LSP {{
-        if count(g:spf13_bundle_groups, 'c_cpp')
+        if BundleActive('c_cpp')
             lua require'lspconfig'.clangd.setup{}
             lua require'lspconfig'.cmake.setup{}
         endif
 
-        if count(g:spf13_bundle_groups, 'python')
+        if BundleActive('python')
             lua require'lspconfig'.pylsp.setup{}
         endif
 
-        if count(g:spf13_bundle_groups, 'latex')
+        if BundleActive('latex')
             lua require'lspconfig'.texlab.setup{}
         endif
     " }}
@@ -606,7 +612,7 @@
     " ALE {{
         if PluginActive('ale')
             let g:airline#extensions#ale#enabled=1
-            if count(g:spf13_bundle_groups, 'c_cpp')
+            if BundleActive('c_cpp')
                 let s:cpp_standard_flag='-std=c++20'
                 let g:ale_c_cc_options='-Wall -Wextra -Wpedantic'
                 let g:ale_c_cppcheck_options='--enable=style --suppress=syntaxError'
@@ -620,7 +626,7 @@
     " }}
 
     " TextObj Sentence {{
-        if count(g:spf13_bundle_groups, 'writing')
+        if BundleActive('writing')
             augroup textobj_sentence
               autocmd!
               autocmd FileType markdown call textobj#sentence#init()
@@ -631,7 +637,7 @@
     " }}
 
     " TextObj Quote {{
-        if count(g:spf13_bundle_groups, 'writing')
+        if BundleActive('writing')
             augroup textobj_quote
                 autocmd!
                 autocmd FileType markdown call textobj#quote#init()
@@ -793,7 +799,7 @@
     " }}
 
     " deoplete {{
-        if count(g:spf13_bundle_groups, 'deoplete')
+        if BundleActive('deoplete')
             let g:deoplete#enable_at_startup = 1
 
             " Plugin key-mappings {{
