@@ -254,7 +254,7 @@
 
     endif
 
-    " Use local bundles config if available {
+    " Use local plugins config if available {
         call SourceIfAvailable('plugins.vim')
     " }
 
@@ -744,11 +744,9 @@
                 \ 'fallback': s:ctrlp_fallback
             \ }
 
+            " CtrlP Funky extensions
             if PluginActive('ctrlp-funky')
-                " CtrlP extensions
                 let g:ctrlp_extensions = ['funky']
-
-                "funky
                 nnoremap <Leader>fu :CtrlPFunky<Cr>
             endif
         endif
