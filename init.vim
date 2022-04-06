@@ -22,9 +22,6 @@
     " Prevent automatically changing to open file directory
     "   let g:spf13_no_autochdir = 1
 
-    " Disable views
-    "   let g:spf13_no_views = 1
-
     " Leader keys
     "   let g:spf13_leader='\'
     "   let g:spf13_localleader='_'
@@ -162,9 +159,7 @@
             Plug 'jistr/vim-nerdtree-tabs'
             Plug 'mbbill/undotree'
             Plug 'lukas-reineke/indent-blankline.nvim'
-            if !exists('g:spf13_no_views')
-                Plug 'vim-scripts/restore_view.vim'
-            endif
+            Plug 'vim-scripts/restore_view.vim'
             Plug 'mhinz/vim-signify'
             Plug 'tpope/vim-abolish'
             Plug 'osyo-manga/vim-over'
@@ -336,15 +331,11 @@
             set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
         endif
 
-        " To disable views add the following to your .vimrc.before.local file:
-        "   let g:spf13_no_views = 1
-        if !exists('g:spf13_no_views')
-            " Add exclusions to mkview and loadview
-            " eg: *.*, svn-commit.tmp
-            let g:skipview_files = [
-                \ '\[example pattern\]'
-                \ ]
-        endif
+        " Add exclusions to mkview and loadview
+        " eg: *.*, svn-commit.tmp
+        let g:skipview_files = [
+            \ '\[example pattern\]'
+            \ ]
     " }}
 
 " }}
