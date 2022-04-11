@@ -89,8 +89,9 @@
 
     " Support optional configurations {{
         silent function! SourceIfAvailable(filename)
-            if filereadable(expand('~/.config/nvim/' . a:filename))
-                source '~/.config/nvim/' . a:filename
+            let l:filepath = expand('~/.config/nvim/' . a:filename)
+            if filereadable(l:filepath)
+                execute 'source ' . l:filepath
             endif
         endfunction()
     " }}
