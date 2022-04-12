@@ -446,14 +446,14 @@
     if !exists('g:spf13_no_wrapRelMotion')
         " Same for 0, home, end, etc
         function! WrapRelativeMotion(key, ...)
-            let vis_sel=''
+            let l:vis_sel=''
             if a:0
-                let vis_sel='gv'
+                let l:vis_sel='gv'
             endif
             if &wrap
-                execute 'normal!' vis_sel . 'g' . a:key
+                execute 'normal!' l:vis_sel . 'g' . a:key
             else
-                execute 'normal!' vis_sel . a:key
+                execute 'normal!' l:vis_sel . a:key
             endif
         endfunction
 
@@ -874,15 +874,15 @@
 
     " Initialize directories {{
     function! InitializeDirectories()
-        let parent = $HOME . '/.config/nvim'
-        let prefix = 'vim'
-        let dir_list = {
+        let l:parent = $HOME . '/.config/nvim'
+        let l:prefix = 'vim'
+        let l:dir_list = {
                     \ 'backup': 'backupdir',
                     \ 'views': 'viewdir',
                     \ 'swap': 'directory' }
 
         if has('persistent_undo')
-            let dir_list['undo'] = 'undodir'
+            let l:dir_list['undo'] = 'undodir'
         endif
 
         " To specify a different directory in which to place the vimbackup,
@@ -891,24 +891,24 @@
         "   let g:spf13_consolidated_directory = <full path to desired directory>
         "   eg: let g:spf13_consolidated_directory = $HOME . '/.vim/'
         if exists('g:spf13_consolidated_directory')
-            let common_dir = g:spf13_consolidated_directory . prefix
+            let l:common_dir = g:spf13_consolidated_directory . l:prefix
         else
-            let common_dir = parent . '/' . prefix
+            let l:common_dir = l:parent . '/' . prefix
         endif
 
-        for [dirname, settingname] in items(dir_list)
-            let directory = common_dir . dirname . '/'
+        for [dirname, settingname] in items(l:dir_list)
+            let l:directory = common_dir . dirname . '/'
             if exists('*mkdir')
-                if !isdirectory(directory)
-                    call mkdir(directory, 'p')
+                if !isdirectory(l:directory)
+                    call mkdir(l:directory, 'p')
                 endif
             endif
-            if !isdirectory(directory)
-                echo 'Warning: Unable to create directory: ' . directory
-                echo 'Try: mkdir -p ' . directory
+            if !isdirectory(l:directory)
+                echo 'Warning: Unable to create directory: ' . l:directory
+                echo 'Try: mkdir -p ' . l:directory
             else
-                let directory = substitute(directory, ' ', '\\\\ ', 'g')
-                exec 'set ' . settingname . '=' . directory
+                let l:directory = substitute(l:directory, ' ', '\\\\ ', 'g')
+                exec 'set ' . settingname . '=' . l:directory
             endif
         endfor
     endfunction
