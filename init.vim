@@ -46,10 +46,6 @@
     " Enable powerline symbols
     "   let g:airline_powerline_fonts = 1
 
-    " vim files directory
-    "   let g:spf13_consolidated_directory = <full path to desired directory>
-    "   eg: let g:spf13_consolidated_directory = $HOME . '/.vim/'
-
 " }}
 
 " Environment {{
@@ -885,16 +881,7 @@
             let l:dir_list['undo'] = 'undodir'
         endif
 
-        " To specify a different directory in which to place the vimbackup,
-        " vimviews, vimundo, and vimswap files/directories, add the following to
-        " your .vimrc.before.local file:
-        "   let g:spf13_consolidated_directory = <full path to desired directory>
-        "   eg: let g:spf13_consolidated_directory = $HOME . '/.vim/'
-        if exists('g:spf13_consolidated_directory')
-            let l:common_dir = g:spf13_consolidated_directory . l:prefix
-        else
-            let l:common_dir = l:parent . '/' . prefix
-        endif
+        let l:common_dir = l:parent . '/' . prefix
 
         for [dirname, settingname] in items(l:dir_list)
             let l:directory = common_dir . dirname . '/'
