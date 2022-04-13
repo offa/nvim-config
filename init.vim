@@ -202,7 +202,6 @@
     " C / C++ {
         if BundleActive('c_cpp')
             Plug 'octol/vim-cpp-enhanced-highlight'
-            Plug 'pboettch/vim-cmake-syntax'
         endif
     " }
 
