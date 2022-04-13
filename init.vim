@@ -104,7 +104,7 @@
 
 " }}
 
-" Use local before if available {{
+" Use local before.vim if available {{
     call SourceIfAvailable('before.vim')
 " }}
 
@@ -239,7 +239,7 @@
 
     endif
 
-    " Use local plugins config if available {
+    " Use local plugins.vim config if available {
         call SourceIfAvailable('plugins.vim')
     " }
 
@@ -903,11 +903,11 @@
     " }}
 " }}
 
-" Use local vimrc if available {{
+" Use local.vim if available {{
     call SourceIfAvailable('local.vim')
 " }}
 
-" Use local gvimrc if available and gui is running {{
+" Use local gui.vim if available and gui is running {{
     if GUI()
         call SourceIfAvailable('gui.vim')
     endif
