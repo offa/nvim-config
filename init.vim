@@ -147,7 +147,7 @@
             Plug 'vim-scripts/sessionman.vim'
             Plug 'easymotion/vim-easymotion'
             Plug 'jistr/vim-nerdtree-tabs'
-            Plug 'mbbill/undotree'
+            Plug 'simnalamburt/vim-mundo'
             Plug 'lukas-reineke/indent-blankline.nvim'
             Plug 'vim-scripts/restore_view.vim'
             Plug 'mhinz/vim-signify'
@@ -785,11 +785,9 @@
         endif
     " }}
 
-    " UndoTree {{
-        if PluginActive('undotree')
-            nnoremap <Leader>u :UndotreeToggle<CR>
-            " If undotree is opened, it is likely one wants to interact with it.
-            let g:undotree_SetFocusWhenToggle=1
+    " vim-mundo {{
+        if PluginActive('vim-mundo')
+            nnoremap <F5> :MundoToggle<CR>
         endif
     " }}
 
