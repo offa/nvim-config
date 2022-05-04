@@ -22,12 +22,11 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 
 ## Customization
 
-There are *optional* `*.local` files for customization (*italic*); those in bold are provided. Configurations is loaded in order:
+Additional *optional* files for customization in `~/.config/nvim/`:
 
-1. *.vimrc.before.local*
-1. *.vimrc.bundles.local*
-1. **.vimrc**
-1. *.vimrc.local*
+- *`before.vim`*: Before settings and plugin configuration
+- *`local.vim`*: Local settings, after settings and plugin configuration
+- *`gui.vim`*: Last, on GUI only
 
 ### Themes
 
