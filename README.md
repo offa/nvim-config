@@ -24,9 +24,10 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 
 Additional *optional* files for customization in `~/.config/nvim/`:
 
-- *`before.vim`*: Before settings and plugin configuration
-- *`local.vim`*: Local settings, after settings and plugin configuration
-- *`gui.vim`*: Last, on GUI only
+- **`before.vim`**: Before settings and plugin configuration
+- **`plugins.vim`**: Additional plugins (*vim-plug* format)
+- **`local.vim`**: Local settings, after settings and plugin configuration
+- **`gui.vim`**: Last, on GUI only
 
 ### Themes
 
@@ -35,7 +36,7 @@ Themes available by default:
 - [gruvbox](https://github.com/morhetz/gruvbox) – *Default*
 - [onedark](https://github.com/joshdick/onedark.vim)
 
-**Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled (**`.vimrc.local`**):
+**Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled in *`local.vim`:
 
 ```vim
 set notermguicolors
@@ -44,28 +45,21 @@ set notermguicolors
 
 ### Selection of plugin groups
 
-It's possible to create a custom selection of plugin groups using the `.vimrc.before.local` file:
+It's possible to create a custom selection of plugin groups using the `before.vim` file:
 
 ```vim
 " Custom plugin group selection
 let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
 ```
 
-To see what groups are available (and what plugins are included by them) have a look into the [.vimrc.bundles](./.vimrc.bundles) file.
+To see what groups are available (and what plugins are included by them) have a look into the [init.vim](./init.vim) file.
 
 **Note:** After changing this settings it's useful to *install* (`:PlugInstall`) new and *cleanup* (`:PlugClean`) old plugins.
 
 
-### Adding a new plugin
+### Adding additional plugin
 
-New plugin's are added by a custom `~/.vimrc.bundles.local` file. Run `:PlugInstall` will install them.
-
-**Example:**
-
-```vim
-Plug 'bling/vim-bufferline'
-```
-
+New plugins are added by a custom `plugin.vim` file with settings in `local.vim` . Run `:PlugInstall` to install them.
 
 ### Removing old plugins
 
