@@ -47,7 +47,7 @@ It's possible to create a custom selection of plugin groups using the `before.vi
 let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
 ```
 
-To see what groups are available (and what plugins are included by them) have a look into the [init.vim](./init.vim) file.
+Available groups are listed in [init.vim](./init.vim).
 
 **Note:** After changing this settings it's useful to *install* (`:PlugInstall`) new and *cleanup* (`:PlugClean`) old plugins.
 
