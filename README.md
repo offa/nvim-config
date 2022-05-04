@@ -15,10 +15,7 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 
 ### Manual Installation
 
-1. Create symlinks:
- 1. `~/.vimrc`
- 1. `~/.vimrc.bundles`
-1. Symlink `~/.config/nvim/init.vim` to `~/.vimrc`
+1. Create symlinks to `~/.config/nvim/init.vim`
 1. Download and install [**vim-plug**](https://github.com/junegunn/vim-plug)
 1. Run `nvim +PlugInstall` to install the plugins
 
