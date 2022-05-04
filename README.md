@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE)
 ![Neovim](https://img.shields.io/badge/nvim-0.5.0+-green.svg)
 
-This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Neovim**](https://neovim.io/) using [**vim-plug**](https://github.com/junegunn/vim-plug) as plugin manager.
+This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Neovim**](https://neovim.io/) using [**vim-plug**] as plugin manager.
 
 
 ## Installation
@@ -25,9 +25,10 @@ Clone or download the repository and ***run*** the **`install.sh`** script *(req
 Additional *optional* files for customization in `~/.config/nvim/`:
 
 - **`before.vim`**: Before settings and plugin configuration
-- **`plugins.vim`**: Additional plugins (*vim-plug* format)
+- **`plugins.vim`**: Additional plugins *(see [**vim-plug**])*
 - **`local.vim`**: Local settings, after settings and plugin configuration
 - **`gui.vim`**: Last, on GUI only
+
 
 ### Themes
 
@@ -61,6 +62,7 @@ To see what groups are available (and what plugins are included by them) have a 
 
 New plugins are added by a custom `plugin.vim` file with settings in `local.vim` . Run `:PlugInstall` to install them.
 
+
 ### Removing old plugins
 
 After a plugin has been removed a `:PlugClean` is necessary to cleanup it's files.
@@ -86,3 +88,6 @@ Thanks to the [*Spf13-vim*](https://github.com/spf13/spf13-vim) project and all 
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+[**vim-plug**]: https://github.com/junegunn/vim-plug
