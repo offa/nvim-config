@@ -37,12 +37,6 @@ Themes available by default:
 - [gruvbox](https://github.com/morhetz/gruvbox) – *Default*
 - [onedark](https://github.com/joshdick/onedark.vim)
 
-**Note:** **Truecolor** is enabled by ***default***. If the terminal doesn't support this, it can be disabled in *`local.vim`:
-
-```vim
-set notermguicolors
-```
-
 
 ### Selection of plugin groups
 
