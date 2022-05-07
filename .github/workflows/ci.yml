@@ -13,3 +13,15 @@ jobs:
         run: pip install -U vim-vint
       - name: Vint
         run: vint init.vim
+
+  markdownlint:
+    runs-on: ubuntu-latest
+    name: Markdownlint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Markdownlint
+        uses: nosborn/github-action-markdown-cli@master
+        with:
+          files: "*.md"
+          config_file: .markdownlint.json
