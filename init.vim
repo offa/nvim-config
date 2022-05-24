@@ -18,13 +18,26 @@
 " }}
 
 " List of options {{
+"
+    " To override all the included bundles, add the following to your
+    " plugins.vim file:
+    "   let g:override_spf13_bundles = 1
+
+    " Select plugin groups to use
+    "   let g:spf13_bundle_groups = [ ... ]
+
+    " Disable restore cursor to file position of previous editing session
+    "   let g:spf13_no_restore_cursor = 1
+
+    " Disable shift key fixes
+    "   let g:spf13_no_keyfixes = 1
 
     " Prevent automatically changing to open file directory
     "   let g:spf13_no_autochdir = 1
 
     " Leader keys
-    "   let g:spf13_leader='\'
-    "   let g:spf13_localleader='_'
+    "   let g:spf13_leader = '\'
+    "   let g:spf13_localleader = '_'
 
     " Disable easier moving in tabs and windows
     "   let g:spf13_no_easyWindows = 1
@@ -111,14 +124,10 @@
 " Plugins {{
     call plug#begin('~/.config/nvim/plugged')
 
-    " In your before.vim file list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
         let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'c_cpp', 'python', ]
     endif
 
-    " To override all the included bundles, add the following to your
-    " plugins.vim file:
-    "   let g:override_spf13_bundles = 1
     if !exists('g:override_spf13_bundles')
 
     " General {
@@ -263,10 +272,6 @@
         endif
     endif
 
-    " Most prefer to automatically switch to the current file directory when
-    " a new buffer is opened; to prevent this behavior, add the following to
-    " your before.vim file:
-    "   let g:spf13_no_autochdir = 1
     if !exists('g:spf13_no_autochdir')
         augroup autochdir
             autocmd!
@@ -293,10 +298,6 @@
         au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
     augroup END
 
-    " http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
-    " Restore cursor to file position in previous editing session
-    " To disable this, add the following to your before.vim file:
-    "   let g:spf13_no_restore_cursor = 1
     if !exists('g:spf13_no_restore_cursor')
         function! ResCur()
             if line("'\"") <= line('$')
@@ -400,10 +401,6 @@
 
 " Key (re)Mappings {{
 
-    " The default leader is '\', but many people prefer ',' as it's in a standard
-    " location. To override this behavior and set it back to '\' (or any other
-    " character) add the following to your before.vim file:
-    "   let g:spf13_leader='\'
     if !exists('g:spf13_leader')
         let mapleader = ','
     else
@@ -415,11 +412,6 @@
         let maplocalleader=g:spf13_localleader
     endif
 
-    " Easier moving in tabs and windows
-    " The lines conflict with the default digraph mapping of <C-K>
-    " If you prefer that functionality, add the following to your
-    " before.vim file:
-    "   let g:spf13_no_easyWindows = 1
     if !exists('g:spf13_no_easyWindows')
         map <C-J> <C-W>j<C-W>_
         map <C-K> <C-W>k<C-W>_
@@ -431,12 +423,6 @@
     noremap j gj
     noremap k gk
 
-    " End/Start of line motion keys act relative to row/wrap width in the
-    " presence of `:set wrap`, and relative to line for `:set nowrap`.
-    " Default vim behaviour is to act relative to text line in both cases
-    " If you prefer the default behaviour, add the following to your
-    " before.vim file:
-    "   let g:spf13_no_wrapRelMotion = 1
     if !exists('g:spf13_no_wrapRelMotion')
         " Same for 0, home, end, etc
         function! WrapRelativeMotion(key, ...)
@@ -470,17 +456,11 @@
         vnoremap ^ :<C-U>call WrapRelativeMotion("^", 1)<CR>
     endif
 
-    " The following two lines conflict with moving to top and
-    " bottom of the screen
-    " If you prefer that functionality, add the following to your
-    " before.vim file:
-    "   let g:spf13_no_fastTabs = 1
     if !exists('g:spf13_no_fastTabs')
         map <S-H> gT
         map <S-L> gt
     endif
 
-    " Stupid shift key fixes
     if !exists('g:spf13_no_keyfixes')
         if has('user_commands')
             command! -bang -nargs=* -complete=file E e<bang> <args>
@@ -512,10 +492,6 @@
     nmap <leader>f8 :set foldlevel=8<CR>
     nmap <leader>f9 :set foldlevel=9<CR>
 
-    " Most prefer to toggle search highlighting rather than clear the current
-    " search results. To clear search highlighting rather than toggle it on
-    " and off, add the following to your before.vim file:
-    "   let g:spf13_clear_search_highlight = 1
     if exists('g:spf13_clear_search_highlight')
         nmap <silent> <leader>/ :nohlsearch<CR>
     else
@@ -798,16 +774,6 @@
     " }}
 
     " vim-airline {{
-        " Set configuration options for the statusline plugin vim-airline.
-        " Use the powerline theme and optionally enable powerline symbols.
-        " To use the symbols , , , , , , and .in the statusline
-        " segments add the following to your before.vim file:
-        "   let g:airline_powerline_fonts=1
-        " If the previous symbols do not render for you then install a
-        " powerline enabled font.
-
-        " See `:echo g:airline_theme_map` for some more choices
-        " Default in terminal vim is 'dark'
         if PluginActive('vim-airline-themes')
             let g:airline#extensions#tabline#enabled=1  " Smarter Tabline
             let g:airline_powerline_fonts=1             " Powerline Fonts
