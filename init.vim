@@ -165,7 +165,6 @@
             Plug 'kana/vim-textobj-indent'
             Plug 'gcmt/wildfire.vim'
             Plug 'ervandew/supertab'
-            Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
             Plug 'kevinhwang91/nvim-hlslens'
         endif
     " }
@@ -795,15 +794,6 @@
     " nvim-autopairs {{
         if PluginActive('nvim-autopairs')
             lua require('nvim-autopairs').setup{}
-        endif
-    " }}
-
-    " wilder.nvim {{
-        if PluginActive('wilder.nvim')
-            call wilder#setup({'modes': [':', '/', '?']})
-            call wilder#set_option('renderer', wilder#popupmenu_renderer({
-                        \ 'highlighter': wilder#basic_highlighter(),
-                        \ }))
         endif
     " }}
 
