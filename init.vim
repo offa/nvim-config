@@ -197,8 +197,6 @@
 
     " Snippets & AutoComplete {
         if BundleActive('completion')
-            Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-            Plug 'deoplete-plugins/deoplete-lsp'
             Plug 'Shougo/neosnippet'
             Plug 'Shougo/neosnippet-snippets'
             Plug 'honza/vim-snippets'
@@ -735,20 +733,6 @@
 
             " Refresh Signify after commit
             au gitcommitsettings FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
-        endif
-    " }}
-
-    " deoplete {{
-        if BundleActive('deoplete')
-            let g:deoplete#enable_at_startup = 1
-
-            " Plugin key-mappings {{
-                " These two lines conflict with the default digraph mapping of <C-K>
-                if !exists('g:spf13_no_neosnippet_expand')
-                    imap <C-k> <Plug>(neosnippet_expand_or_jump)
-                    smap <C-k> <Plug>(neosnippet_expand_or_jump)
-                endif
-            " }}
         endif
     " }}
 
