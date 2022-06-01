@@ -164,7 +164,6 @@
             Plug 'kana/vim-textobj-user'
             Plug 'kana/vim-textobj-indent'
             Plug 'gcmt/wildfire.vim'
-            Plug 'ervandew/supertab'
             Plug 'kevinhwang91/nvim-hlslens'
         endif
     " }
@@ -736,12 +735,6 @@
 
             " Refresh Signify after commit
             au gitcommitsettings FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
-        endif
-    " }}
-
-    " SuperTab {{
-        if PluginActive('supertab/')
-            let g:SuperTabDefaultCompletionType = '<c-n>'
         endif
     " }}
 
