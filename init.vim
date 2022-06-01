@@ -125,7 +125,7 @@
     call plug#begin('~/.config/nvim/plugged')
 
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', 'c_cpp', 'python', ]
+        let g:spf13_bundle_groups=['general', 'writing', 'completion', 'programming', 'c_cpp', 'python', ]
     endif
 
     if !exists('g:override_spf13_bundles')
@@ -198,7 +198,7 @@
     " }
 
     " Snippets & AutoComplete {
-        if BundleActive('deoplete')
+        if BundleActive('completion')
             Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
             Plug 'deoplete-plugins/deoplete-lsp'
             Plug 'Shougo/neosnippet'

@@ -39,7 +39,7 @@ It's possible to create a custom selection of plugin groups using the `before.vi
 
 ```vim
 " Custom plugin group selection
-let g:spf13_bundle_groups=['general', 'writing', 'deoplete', 'programming', ]
+let g:spf13_bundle_groups=['general', 'writing', 'completion', 'programming', ]
 ```
 
 Available groups are listed in [init.vim](./init.vim).
