@@ -51,11 +51,6 @@
     " Clear search highlighting
     "   let g:spf13_clear_search_highlight = 1
 
-    " Disable neosnippet expansion
-    " This maps over <C-k> and does some Supertab
-    " emulation with snippets
-    "   let g:spf13_no_neosnippet_expand = 1
-
 " }}
 
 " Environment {{
@@ -197,10 +192,6 @@
             Plug 'hrsh7th/cmp-path'
             Plug 'hrsh7th/cmp-cmdline'
             Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-
-            Plug 'Shougo/neosnippet'
-            Plug 'Shougo/neosnippet-snippets'
-            Plug 'honza/vim-snippets'
         endif
     " }
 
