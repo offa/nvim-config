@@ -182,9 +182,6 @@
             Plug 'godlygeek/tabular'
             Plug 'luochen1990/rainbow'
             Plug 'sbdchd/neoformat'
-            if executable('ctags')
-                Plug 'majutsushi/tagbar'
-            endif
             Plug 'sheerun/vim-polyglot'
             Plug 'alvan/vim-closetag'
             Plug 'neovim/nvim-lspconfig'
@@ -748,12 +745,6 @@ EOF
                 let g:ctrlp_extensions = ['funky']
                 nnoremap <Leader>fu :CtrlPFunky<Cr>
             endif
-        endif
-    " }}
-
-    " TagBar {{
-        if PluginActive('tagbar')
-            nnoremap <silent> <leader>tt :TagbarToggle<CR>
         endif
     " }}
 
