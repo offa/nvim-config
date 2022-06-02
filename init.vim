@@ -56,9 +56,6 @@
     " emulation with snippets
     "   let g:spf13_no_neosnippet_expand = 1
 
-    " Enable powerline symbols
-    "   let g:airline_powerline_fonts = 1
-
 " }}
 
 " Environment {{
