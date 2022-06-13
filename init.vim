@@ -172,6 +172,8 @@
             Plug 'hrsh7th/cmp-path'
             Plug 'hrsh7th/cmp-cmdline'
             Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+            Plug 'SirVer/ultisnips'
+            Plug 'honza/vim-snippets'
         endif
     " }
 
@@ -519,6 +521,7 @@ lua <<EOF
             cmp.setup({
                 snippet = {
                     expand = function(args)
+                        vim.fn["UltiSnips#Anon"](args.body)
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
@@ -537,6 +540,7 @@ lua <<EOF
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
+                    { name = 'ultisnips' },
                 }, {
                    { name = 'buffer' },
                 })
