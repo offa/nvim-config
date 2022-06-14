@@ -3,7 +3,7 @@
 [![ci](https://github.com/offa/nvim-config/actions/workflows/ci.yml/badge.svg)](https://github.com/offa/nvim-config/actions/workflows/ci.yml)
 [![GitHub release](https://img.shields.io/github/release/offa/nvim-config.svg)](https://github.com/offa/nvim-config/releases)
 [![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg)](LICENSE)
-![Neovim](https://img.shields.io/badge/nvim-0.5.0+-green.svg)
+![Neovim](https://img.shields.io/badge/nvim-0.7.0+-green.svg)
 
 This is a [Spf13-vim](https://github.com/spf13/spf13-vim) based config for [**Neovim**](https://neovim.io/) using [**vim-plug**] as plugin manager.
 
