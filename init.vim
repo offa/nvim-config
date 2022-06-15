@@ -116,7 +116,7 @@
             Plug 'roman/golden-ratio'
             Plug 'RRethy/vim-illuminate'
             Plug 'jeetsukumaran/vim-buffergator'
-            Plug 'scrooloose/nerdtree'
+            Plug 'preservim/nerdtree'
             Plug 'tpope/vim-surround'
             Plug 'tpope/vim-repeat'
             Plug 'rhysd/conflict-marker.vim'
@@ -142,10 +142,10 @@
 
     " Writing {
         if BundleActive('writing')
-            Plug 'reedes/vim-litecorrect'
-            Plug 'reedes/vim-textobj-sentence'
-            Plug 'reedes/vim-textobj-quote'
-            Plug 'reedes/vim-wordy'
+            Plug 'preservim/vim-litecorrect'
+            Plug 'preservim/vim-textobj-sentence'
+            Plug 'preservim/vim-textobj-quote'
+            Plug 'preservim/vim-wordy'
         endif
     " }
 
@@ -153,7 +153,7 @@
         if BundleActive('programming')
             Plug 'dense-analysis/ale'
             Plug 'tpope/vim-fugitive'
-            Plug 'scrooloose/nerdcommenter'
+            Plug 'preservim/nerdcommenter'
             Plug 'luochen1990/rainbow'
             Plug 'sbdchd/neoformat'
             Plug 'sheerun/vim-polyglot'
