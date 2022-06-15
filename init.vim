@@ -120,7 +120,6 @@
             Plug 'windwp/nvim-autopairs'
             Plug 'ctrlpvim/ctrlp.vim'
             Plug 'tacahiroy/ctrlp-funky'
-            Plug 'terryma/vim-multiple-cursors'
             Plug 'easymotion/vim-easymotion'
             Plug 'simnalamburt/vim-mundo'
             Plug 'lukas-reineke/indent-blankline.nvim'
