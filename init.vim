@@ -122,7 +122,6 @@
             Plug 'tacahiroy/ctrlp-funky'
             Plug 'terryma/vim-multiple-cursors'
             Plug 'easymotion/vim-easymotion'
-            Plug 'jistr/vim-nerdtree-tabs'
             Plug 'simnalamburt/vim-mundo'
             Plug 'lukas-reineke/indent-blankline.nvim'
             Plug 'farmergreg/vim-lastplace'
@@ -604,7 +603,6 @@ EOF
         if PluginActive('nerdtree')
             let g:NERDShutUp=1
 
-            map <C-e> <plug>NERDTreeTabsToggle<CR>
             map <leader>e :NERDTreeFind<CR>
             nmap <leader>nt :NERDTreeFind<CR>
 
@@ -615,7 +613,6 @@ EOF
             let NERDTreeMouseMode=2
             let NERDTreeShowHidden=1
             let NERDTreeKeepTreeInNewTab=1
-            let g:nerdtree_tabs_open_on_gui_startup=0
         endif
     " }}
 
