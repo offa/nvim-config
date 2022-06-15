@@ -121,7 +121,6 @@
             Plug 'ctrlpvim/ctrlp.vim'
             Plug 'tacahiroy/ctrlp-funky'
             Plug 'terryma/vim-multiple-cursors'
-            Plug 'vim-scripts/sessionman.vim'
             Plug 'easymotion/vim-easymotion'
             Plug 'jistr/vim-nerdtree-tabs'
             Plug 'simnalamburt/vim-mundo'
@@ -258,6 +257,7 @@
     set iskeyword-=-                    " '-' is an end of word designator
 
     let g:lastplace_ignore = 'gitcommit,gitrebase,svn,hgcommit'
+    set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
 
     " Setting up the directories {{
         set backup                  " Backups are nice ...
@@ -622,15 +622,6 @@ EOF
             let NERDTreeShowHidden=1
             let NERDTreeKeepTreeInNewTab=1
             let g:nerdtree_tabs_open_on_gui_startup=0
-        endif
-    " }}
-
-    " Session List {{
-        set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-        if PluginActive('sessionman.vim')
-            nmap <leader>sl :SessionList<CR>
-            nmap <leader>ss :SessionSave<CR>
-            nmap <leader>sc :SessionClose<CR>
         endif
     " }}
 
