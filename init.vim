@@ -180,7 +180,6 @@
 
     " Python {
         if BundleActive('python')
-            Plug 'vim-scripts/python_match.vim'
         endif
     " }
 
