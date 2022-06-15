@@ -94,7 +94,7 @@
     call plug#begin('~/.config/nvim/plugged')
 
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'writing', 'completion', 'programming', 'c_cpp', 'python', ]
+        let g:spf13_bundle_groups=['general', 'writing', 'completion', 'programming', 'c_cpp', ]
     endif
 
     if !exists('g:override_spf13_bundles')
@@ -175,11 +175,6 @@
     " C / C++ {
         if BundleActive('c_cpp')
             Plug 'octol/vim-cpp-enhanced-highlight'
-        endif
-    " }
-
-    " Python {
-        if BundleActive('python')
         endif
     " }
 
