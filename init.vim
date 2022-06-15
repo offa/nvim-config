@@ -26,9 +26,6 @@
     " Select plugin groups to use
     "   let g:spf13_bundle_groups = [ ... ]
 
-    " Disable restore cursor to file position of previous editing session
-    "   let g:spf13_no_restore_cursor = 1
-
     " Disable shift key fixes
     "   let g:spf13_no_keyfixes = 1
 
@@ -129,7 +126,7 @@
             Plug 'jistr/vim-nerdtree-tabs'
             Plug 'simnalamburt/vim-mundo'
             Plug 'lukas-reineke/indent-blankline.nvim'
-            Plug 'vim-scripts/restore_view.vim'
+            Plug 'farmergreg/vim-lastplace'
             Plug 'mhinz/vim-signify'
             Plug 'tpope/vim-abolish'
             Plug 'osyo-manga/vim-over'
@@ -260,26 +257,7 @@
     set iskeyword-=#                    " '#' is an end of word designator
     set iskeyword-=-                    " '-' is an end of word designator
 
-    augroup gitcommitsettings
-        autocmd!
-        " Instead of reverting the cursor to the last position in the buffer, we
-        " set it to the first line when editing a git commit message
-        au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
-    augroup END
-
-    if !exists('g:spf13_no_restore_cursor')
-        function! ResCur()
-            if line("'\"") <= line('$')
-                silent! normal! g`"
-                return 1
-            endif
-        endfunction
-
-        augroup resCur
-            autocmd!
-            autocmd BufWinEnter * call ResCur()
-        augroup END
-    endif
+    let g:lastplace_ignore = 'gitcommit,gitrebase,svn,hgcommit'
 
     " Setting up the directories {{
         set backup                  " Backups are nice ...
@@ -727,7 +705,9 @@ EOF
             nnoremap <silent> <leader>gu :SignifyRefresh<CR>
 
             " Refresh Signify after commit
-            au gitcommitsettings FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
+            augroup gitcommitsettings
+                au gitcommitsettings FileType gitcommit au! BufDelete COMMIT_EDITMSG SignifyRefresh
+            augroup END
         endif
     " }}
 
