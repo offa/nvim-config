@@ -42,11 +42,7 @@ backupIfExisting() {
 }
 
 createLink() {
-    ln -s -f $1 $2
-
-    if [ "$?" -ne 0 ]; then
-        fail "Unable to create link $1 --> $2"
-    fi
+    ln -s -f "$1" "$2" || fail "Unable to create link $1 --> $2"
 }
 
 linkConfig() {
@@ -54,11 +50,7 @@ linkConfig() {
 }
 
 installPluginManager() {
-    curl -sfLo ${NVIM_CONF_DIR}/autoload/plug.vim --create-dirs ${PLUG_VIM_REPO}
-
-    if [ "$?" -ne 0 ]; then
-        fail "Downloading Plugin manager failed"
-    fi
+    curl -sfLo "${NVIM_CONF_DIR}/autoload/plug.vim" --create-dirs "${PLUG_VIM_REPO}" || fail "Downloading Plugin manager failed"
 }
 
 checkProgram() {
@@ -77,10 +69,10 @@ checkProgram nvim
 checkProgram curl
 
 # Ensure config directory
-mkdir -p ${NVIM_CONF_DIR}
+mkdir -p "${NVIM_CONF_DIR}"
 
 # Create backup of files if already existing
-backupIfExisting ${NVIM_CONF_DIR}/init.lua
+backupIfExisting "${NVIM_CONF_DIR}/init.lua"
 
 
 # Create links
