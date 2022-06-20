@@ -57,18 +57,17 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 -- }}
 
 -- Directories {{
--- TODO: Use different for testing only
 local prefix = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config") .. "/nvim"
-vim.opt.undodir = prefix .. "/_exp_undo"
-vim.opt.backupdir = prefix .. "/_exp_backup"
-vim.opt.directory = prefix .. "/_exp_swap"
-vim.opt.viewdir = prefix .. "/_exp_views"
+vim.opt.undodir = prefix .. "/undo"
+vim.opt.backupdir = prefix .. "/backup"
+vim.opt.directory = prefix .. "/swap"
+vim.opt.viewdir = prefix .. "/views"
 -- }}
 
 
 -- Plugins {{
 local Plug = vim.fn["plug#"]
-vim.call("plug#begin", prefix .. "/_exp_plugged")
+vim.call("plug#begin", prefix .. "/plugged")
 
 -- UI
 Plug "ellisonleao/gruvbox.nvim"
