@@ -69,14 +69,12 @@ vim.opt.viewdir = prefix .. "/views"
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin", prefix .. "/plugged")
 
--- UI
+-- General
 Plug "ellisonleao/gruvbox.nvim"
 Plug "nvim-lualine/lualine.nvim"
 Plug "kyazdani42/nvim-web-devicons"
 Plug "lukas-reineke/indent-blankline.nvim"
 Plug "roman/golden-ratio"
-
--- General
 Plug "jeetsukumaran/vim-buffergator"
 Plug "farmergreg/vim-lastplace"
 Plug "kevinhwang91/nvim-hlslens"
@@ -86,6 +84,7 @@ Plug "nvim-telescope/telescope-file-browser.nvim"
 Plug "simnalamburt/vim-mundo"
 Plug "phaazon/hop.nvim"
 Plug "luochen1990/rainbow"
+Plug "RRethy/vim-illuminate"
 
 -- Completion
 Plug "neovim/nvim-lspconfig"
