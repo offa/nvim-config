@@ -85,6 +85,7 @@ Plug "simnalamburt/vim-mundo"
 Plug "phaazon/hop.nvim"
 Plug "luochen1990/rainbow"
 Plug "RRethy/vim-illuminate"
+Plug "ur4ltz/surround.nvim"
 
 -- Completion
 Plug "neovim/nvim-lspconfig"
@@ -123,6 +124,7 @@ require("Comment").setup{}
 require("indent_blankline").setup{}
 require("gitsigns").setup{}
 require("nvim-autopairs").setup{}
+require("surround").setup{}
 
 -- nvim-cmp
 local cmp = require("cmp")
