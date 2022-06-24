@@ -57,7 +57,7 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 -- }}
 
 -- Directories {{
-local prefix = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config") .. "/nvim"
+local prefix = vim.fn.stdpath("config")
 vim.opt.undodir = prefix .. "/undo"
 vim.opt.backupdir = prefix .. "/backup"
 vim.opt.directory = prefix .. "/swap"
