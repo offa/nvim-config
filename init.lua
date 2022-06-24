@@ -57,17 +57,17 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 -- }}
 
 -- Directories {{
-local prefix = vim.fn.stdpath("config")
-vim.opt.undodir = prefix .. "/undo"
-vim.opt.backupdir = prefix .. "/backup"
-vim.opt.directory = prefix .. "/swap"
-vim.opt.viewdir = prefix .. "/views"
+local dataPath = vim.fn.stdpath("data")
+vim.opt.undodir = dataPath .. "/undo"
+vim.opt.backupdir = dataPath .. "/backup"
+vim.opt.directory = dataPath .. "/swap"
+vim.opt.viewdir = dataPath .. "/views"
 -- }}
 
 
 -- Plugins {{
 local Plug = vim.fn["plug#"]
-vim.call("plug#begin", prefix .. "/plugged")
+vim.call("plug#begin", dataPath .. "/plugged")
 
 -- General
 Plug "ellisonleao/gruvbox.nvim"
