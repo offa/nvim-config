@@ -3,6 +3,15 @@ name: ci
 on: [push, pull_request]
 
 jobs:
+  luacheck:
+    runs-on: ubuntu-latest
+    name: Luacheck
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Luacheck
+        uses: lunarmodules/luacheck@master
+
   markdownlint:
     runs-on: ubuntu-latest
     name: Markdownlint
@@ -16,9 +25,9 @@ jobs:
           config_file: .markdownlint.json
 
   shellcheck:
-    name: Shellcheck
     runs-on: ubuntu-latest
+    name: Shellcheck
     steps:
-    - uses: actions/checkout@main
-    - name: Run ShellCheck
-      uses: ludeeus/action-shellcheck@master
+      - uses: actions/checkout@main
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master

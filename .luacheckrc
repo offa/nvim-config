@@ -1,0 +1,5 @@
+codes = true
+
+globals = {
+  "vim"
+}

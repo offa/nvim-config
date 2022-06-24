@@ -51,7 +51,7 @@ vim.opt.undofile = true
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
 vim.opt.clipboard = "unnamedplus"
-vim.opt.mouse = a
+vim.opt.mouse = "a"
 vim.opt.mousehide = true
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 -- }}
