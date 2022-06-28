@@ -86,6 +86,7 @@ Plug "phaazon/hop.nvim"
 Plug "luochen1990/rainbow"
 Plug "RRethy/vim-illuminate"
 Plug "ur4ltz/surround.nvim"
+Plug "kyazdani42/nvim-tree.lua"
 
 -- Completion
 Plug "neovim/nvim-lspconfig"
@@ -125,6 +126,7 @@ require("indent_blankline").setup{}
 require("gitsigns").setup{}
 require("nvim-autopairs").setup{}
 require("surround").setup{}
+require("nvim-tree").setup{}
 
 -- nvim-cmp
 local cmp = require("cmp")
@@ -214,7 +216,6 @@ vim.api.nvim_set_keymap("", "<leader><leader>", ":HopWord<CR>", { noremap = true
 -- Telescope
 require("telescope").setup{}
 require("telescope").load_extension("file_browser")
-vim.api.nvim_set_keymap("n", "<leader>e", ":Telescope file_browser<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>f", "", {
     noremap = true,
     silent = true,
@@ -224,4 +225,7 @@ vim.api.nvim_set_keymap("n", "<Leader>f", "", {
         if not ok then require("telescope.builtin").find_files(opts) end
     end
 })
+
+-- Nvim-Tree
+vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- }}
