@@ -23,6 +23,8 @@ mkdir -p ~/.config/nvim
 ln -s ./init.lua ~/.config/nvim/init.lua
 
 # Install Plug and Plugins
-curl -sfLO ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -sfLO ~/.config/nvim/autoload/plug.vim \
+    --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugUpgrade +PlugInstall +qa!
 ```
