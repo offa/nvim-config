@@ -72,7 +72,7 @@ vim.call("plug#begin", dataPath .. "/plugged")
 -- General
 Plug "ellisonleao/gruvbox.nvim"
 Plug "nvim-lualine/lualine.nvim"
-Plug "kyazdani42/nvim-web-devicons"
+Plug "nvim-tree/nvim-web-devicons"
 Plug "lukas-reineke/indent-blankline.nvim"
 Plug "roman/golden-ratio"
 Plug "jeetsukumaran/vim-buffergator"
@@ -86,7 +86,7 @@ Plug "phaazon/hop.nvim"
 Plug "luochen1990/rainbow"
 Plug "RRethy/vim-illuminate"
 Plug "ur4ltz/surround.nvim"
-Plug "kyazdani42/nvim-tree.lua"
+Plug "nvim-tree/nvim-tree.lua"
 
 -- Completion
 Plug "neovim/nvim-lspconfig"
