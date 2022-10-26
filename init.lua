@@ -127,6 +127,7 @@ require("gitsigns").setup{}
 require("nvim-autopairs").setup{}
 require("surround").setup{}
 require("nvim-tree").setup{}
+require("hlslens").setup{}
 
 -- nvim-cmp
 local cmp = require("cmp")
@@ -189,7 +190,6 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("lspconfig")["clangd"].setup { capabilities = capabilities }
 require("lspconfig")["cmake"].setup { capabilities = capabilities }
 require("lspconfig")["pylsp"].setup { capabilities = capabilities }
-
 -- ALE
 local ale_cpp_std = "-std=c++20"
 vim.g.ale_c_cc_options = "-Wall -Wextra -Wpedantic"
