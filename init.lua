@@ -190,6 +190,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("lspconfig")["clangd"].setup { capabilities = capabilities }
 require("lspconfig")["cmake"].setup { capabilities = capabilities }
 require("lspconfig")["pylsp"].setup { capabilities = capabilities }
+
 -- ALE
 local ale_cpp_std = "-std=c++20"
 vim.g.ale_c_cc_options = "-Wall -Wextra -Wpedantic"
@@ -199,6 +200,7 @@ vim.g.ale_cpp_clangtidy_extra_options = vim.g.ale_cpp_cc_options
 vim.g.ale_cpp_cppcheck_options = vim.g.ale_c_cppcheck_options
 vim.g.ale_cpp_clangcheck_options = "-extra-arg=" .. ale_cpp_std
 vim.g.ale_cpp_clangd_options = vim.g.ale_cpp_cc_options
+vim.g.ale_use_neovim_diagnostics_api = 1
 
 -- Fugitive
 vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
