@@ -192,7 +192,7 @@ require("lspconfig")["cmake"].setup { capabilities = capabilities }
 require("lspconfig")["pylsp"].setup { capabilities = capabilities }
 
 -- ALE
-local ale_cpp_std = "-std=c++20"
+local ale_cpp_std = "-std=c++23"
 vim.g.ale_c_cc_options = "-Wall -Wextra -Wpedantic"
 vim.g.ale_c_cppcheck_options = "--enable=style --suppress=syntaxError"
 vim.g.ale_cpp_cc_options = ale_cpp_std .. " " .. vim.g.ale_c_cc_options
