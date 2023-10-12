@@ -122,7 +122,7 @@ vim.cmd([[colorscheme gruvbox]])
 -- Plugin Settings {{
 require("lualine").setup{}
 require("Comment").setup{}
-require("indent_blankline").setup{}
+require("ibl").setup{}
 require("gitsigns").setup{}
 require("nvim-autopairs").setup{}
 require("surround").setup{}
