@@ -1,7 +1,7 @@
 #!/bin/bash
 # nvim-config - NeoVim config
 #
-# Copyright (C) 2016-2023  offa
+# Copyright (C) 2016-2024  offa
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
