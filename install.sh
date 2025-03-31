@@ -77,6 +77,7 @@ backupIfExisting "${NVIM_CONF_DIR}/init.lua"
 
 # Create links
 linkConfig init.lua
+linkConfig ftdetect
 ok "Links created"
 
 
