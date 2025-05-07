@@ -2,6 +2,10 @@ name: ci
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   luacheck:
     runs-on: ubuntu-latest
