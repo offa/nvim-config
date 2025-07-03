@@ -189,9 +189,9 @@ cmp.setup.cmdline(":", {
 vim.lsp.set_log_level("off")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lspconfig")["clangd"].setup { capabilities = capabilities }
-require("lspconfig")["cmake"].setup { capabilities = capabilities }
-require("lspconfig")["pylsp"].setup { capabilities = capabilities }
+vim.lsp.enable("clangd", {capabilities = capabilities})
+vim.lsp.enable("cmake", {capabilities = capabilities})
+vim.lsp.enable("pylsp", {capabilities = capabilities})
 
 -- ALE
 local ale_cpp_std = "-std=c++23"
