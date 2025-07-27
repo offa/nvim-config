@@ -85,7 +85,7 @@ Plug "simnalamburt/vim-mundo"
 Plug "smoka7/hop.nvim"
 Plug "luochen1990/rainbow"
 Plug "RRethy/vim-illuminate"
-Plug "ur4ltz/surround.nvim"
+Plug "echasnovski/mini.surround"
 Plug "nvim-tree/nvim-tree.lua"
 
 -- Completion
@@ -126,7 +126,7 @@ require("Comment").setup{}
 require("ibl").setup{}
 require("gitsigns").setup{}
 require("nvim-autopairs").setup{}
-require("surround").setup{}
+require('mini.surround').setup()
 require("nvim-tree").setup{}
 require("hlslens").setup{}
 
