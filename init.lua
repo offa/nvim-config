@@ -97,8 +97,8 @@ Plug "hrsh7th/cmp-path"
 Plug "hrsh7th/cmp-cmdline"
 Plug "hrsh7th/cmp-nvim-lsp-signature-help"
 Plug "SirVer/ultisnips"
-Plug "honza/vim-snippets"
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug "honza/vim-snippets"
 
 -- Programming
 Plug "dense-analysis/ale"
@@ -234,4 +234,8 @@ vim.api.nvim_set_keymap("n", "<Leader>f", "", {
 
 -- Nvim-Tree
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
+
+-- UltiSnips
+vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
 -- }}
