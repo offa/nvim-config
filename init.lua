@@ -98,6 +98,7 @@ Plug "hrsh7th/cmp-cmdline"
 Plug "hrsh7th/cmp-nvim-lsp-signature-help"
 Plug "SirVer/ultisnips"
 Plug "honza/vim-snippets"
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 -- Programming
 Plug "dense-analysis/ale"
