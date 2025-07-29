@@ -236,6 +236,6 @@ vim.api.nvim_set_keymap("n", "<Leader>f", "", {
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
 
 -- UltiSnips
-vim.g.UltiSnipsJumpForwardTrigger = "<C-l>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<C-h>"
+vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
 -- }}
