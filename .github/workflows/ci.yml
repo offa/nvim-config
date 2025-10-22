@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: Luacheck
-        uses: lunarmodules/luacheck@master
+        uses: lunarmodules/luacheck@81bb2f2e70a07a14cb369852dcd12716fae75877
 
   markdownlint:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: Markdownlint
-        uses: nosborn/github-action-markdown-cli@master
+        uses: nosborn/github-action-markdown-cli@53110ddff4a0a32df9abd4b609c688f20a0dbc56
         with:
           files: "*.md"
           config_file: .markdownlint.json
@@ -34,4 +34,4 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@master
+        uses: ludeeus/action-shellcheck@00b27aa7cb85167568cb48a3838b75f4265f2bca
