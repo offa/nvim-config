@@ -85,7 +85,7 @@ Plug "simnalamburt/vim-mundo"
 Plug "smoka7/hop.nvim"
 Plug "luochen1990/rainbow"
 Plug "RRethy/vim-illuminate"
-Plug "echasnovski/mini.surround"
+Plug "nvim-mini/mini.surround"
 Plug "nvim-tree/nvim-tree.lua"
 
 -- Completion
