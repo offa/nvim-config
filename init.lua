@@ -85,7 +85,7 @@ Plug "simnalamburt/vim-mundo"
 Plug "smoka7/hop.nvim"
 Plug "luochen1990/rainbow"
 Plug "RRethy/vim-illuminate"
-Plug "echasnovski/mini.surround"
+Plug "nvim-mini/mini.surround"
 Plug "nvim-tree/nvim-tree.lua"
 
 -- Completion
@@ -97,7 +97,7 @@ Plug "hrsh7th/cmp-path"
 Plug "hrsh7th/cmp-cmdline"
 Plug "hrsh7th/cmp-nvim-lsp-signature-help"
 Plug "SirVer/ultisnips"
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug "quangnguyen30192/cmp-nvim-ultisnips"
 Plug "honza/vim-snippets"
 
 -- Programming
