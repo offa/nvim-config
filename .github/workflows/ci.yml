@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: Luacheck
-        uses: lunarmodules/luacheck@eea104d82fa66f27df2a7d900b3c271a6ca122ac
+        uses: lunarmodules/luacheck@f47ad699b5aab8eba5494a2b63e26c24dbf486ce
 
   markdownlint:
     runs-on: ubuntu-latest
