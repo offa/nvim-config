@@ -58,6 +58,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.mousehide = true
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
+vim.opt.updatetime = 300
 -- }}
 
 -- Directories {{
