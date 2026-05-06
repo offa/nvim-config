@@ -16,6 +16,8 @@
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -- Settings {{
+vim.loader.enable()
+
 vim.g.mapleader = ","
 
 vim.opt.joinspaces = false
