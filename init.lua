@@ -48,7 +48,9 @@ vim.opt.virtualedit = "onemore"
 vim.opt.history = 1000
 vim.opt.spell = true
 vim.opt.hidden = true
-vim.opt.backup = true
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
@@ -61,11 +63,8 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 -- Directories {{
 local dataPath = vim.fn.stdpath("data")
 vim.opt.undodir = dataPath .. "/undo"
-vim.opt.backupdir = dataPath .. "/backup"
-vim.opt.directory = dataPath .. "/swap"
 vim.opt.viewdir = dataPath .. "/views"
 -- }}
-
 
 -- Plugins {{
 local Plug = vim.fn["plug#"]
