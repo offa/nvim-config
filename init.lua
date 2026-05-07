@@ -108,7 +108,6 @@ Plug "tpope/vim-fugitive"
 Plug "lewis6991/gitsigns.nvim"
 Plug "rhysd/vim-lsp-ale"
 Plug "sbdchd/neoformat"
-Plug "sheerun/vim-polyglot"
 Plug "numToStr/Comment.nvim"
 Plug "windwp/nvim-autopairs"
 
