@@ -108,7 +108,6 @@ Plug "tpope/vim-fugitive"
 Plug "lewis6991/gitsigns.nvim"
 Plug "rhysd/vim-lsp-ale"
 Plug "sbdchd/neoformat"
-Plug "numToStr/Comment.nvim"
 Plug "windwp/nvim-autopairs"
 
 vim.call("plug#end")
@@ -123,7 +122,6 @@ vim.cmd([[colorscheme gruvbox]])
 
 -- Plugin Settings {{
 require("lualine").setup{}
-require("Comment").setup{}
 require("ibl").setup{}
 require("gitsigns").setup{}
 require("nvim-autopairs").setup{}
