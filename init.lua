@@ -36,6 +36,7 @@ vim.opt.ruler = true
 vim.opt.showcmd = true
 vim.opt.showmode = true
 vim.opt.showmatch = true
+vim.opt.signcolumn = "yes"
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
