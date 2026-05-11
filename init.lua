@@ -75,7 +75,7 @@ vim.call("plug#begin", dataPath .. "/plugged")
 -- General
 Plug "ellisonleao/gruvbox.nvim"
 Plug "nvim-lualine/lualine.nvim"
-Plug "nvim-tree/nvim-web-devicons"
+Plug "nvim-mini/mini.icons"
 Plug "lukas-reineke/indent-blankline.nvim"
 Plug "roman/golden-ratio"
 Plug "jeetsukumaran/vim-buffergator"
@@ -129,6 +129,7 @@ require("nvim-autopairs").setup{}
 require('mini.surround').setup()
 require("nvim-tree").setup{}
 require("hlslens").setup{}
+require("mini.icons").setup()
 
 -- nvim-cmp
 local cmp = require("cmp")
@@ -238,4 +239,7 @@ vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { norem
 -- UltiSnips
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+
+-- Mini Icons
+require("mini.icons").mock_nvim_web_devicons()
 -- }}
