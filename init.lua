@@ -79,7 +79,7 @@ Plug "nvim-mini/mini.icons"
 Plug "lukas-reineke/indent-blankline.nvim"
 Plug "roman/golden-ratio"
 Plug "jeetsukumaran/vim-buffergator"
-Plug "farmergreg/vim-lastplace"
+Plug "nxhung2304/lastplace.nvim"
 Plug "kevinhwang91/nvim-hlslens"
 Plug "nvim-lua/plenary.nvim"
 Plug "nvim-telescope/telescope.nvim"
@@ -130,6 +130,7 @@ require('mini.surround').setup()
 require("nvim-tree").setup{}
 require("hlslens").setup{}
 require("mini.icons").setup()
+require("lastplace").setup{}
 
 -- nvim-cmp
 local cmp = require("cmp")
@@ -209,9 +210,6 @@ vim.g.ale_use_neovim_diagnostics_api = 1
 -- Fugitive
 vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true})
-
--- Lastplace
-vim.g.lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
 
 -- Mundo
 vim.api.nvim_set_keymap("n", "<F5>", ":MundoToggle<CR>", { noremap = true, silent = true })
