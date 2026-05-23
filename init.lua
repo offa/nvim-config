@@ -196,15 +196,10 @@ vim.lsp.config("*", { capabilities = capabilities })
 vim.lsp.enable({"clangd", "cmake", "pylsp"})
 
 -- ALE
-local ale_cpp_std = "-std=c++23"
-vim.g.ale_c_cc_options = "-Wall -Wextra -Wpedantic"
-vim.g.ale_c_cppcheck_options = "--enable=style --suppress=syntaxError"
-vim.g.ale_cpp_cc_options = ale_cpp_std .. " " .. vim.g.ale_c_cc_options
-vim.g.ale_cpp_clangtidy_extra_options = vim.g.ale_cpp_cc_options
-vim.g.ale_cpp_cppcheck_options = vim.g.ale_c_cppcheck_options
-vim.g.ale_cpp_clangcheck_options = "-extra-arg=" .. ale_cpp_std
-vim.g.ale_cpp_clangd_options = vim.g.ale_cpp_cc_options
 vim.g.ale_use_neovim_diagnostics_api = 1
+vim.g.ale_disable_lsp = 1
+vim.g.ale_lint_on_text_changed = "normal"
+vim.g.ale_lint_on_insert_leave = 1
 
 -- Fugitive
 vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
