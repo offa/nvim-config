@@ -107,7 +107,6 @@ Plug "honza/vim-snippets"
 Plug "dense-analysis/ale"
 Plug "tpope/vim-fugitive"
 Plug "lewis6991/gitsigns.nvim"
-Plug "rhysd/vim-lsp-ale"
 Plug "sbdchd/neoformat"
 Plug "windwp/nvim-autopairs"
 
