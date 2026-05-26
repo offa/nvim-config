@@ -77,7 +77,7 @@ Plug "ellisonleao/gruvbox.nvim"
 Plug "nvim-lualine/lualine.nvim"
 Plug "nvim-mini/mini.icons"
 Plug "lukas-reineke/indent-blankline.nvim"
-Plug "roman/golden-ratio"
+Plug "nvim-focus/focus.nvim"
 Plug "jeetsukumaran/vim-buffergator"
 Plug "nxhung2304/lastplace.nvim"
 Plug "kevinhwang91/nvim-hlslens"
@@ -130,6 +130,7 @@ require("nvim-tree").setup{}
 require("hlslens").setup{}
 require("mini.icons").setup()
 require("lastplace").setup{}
+require("focus").setup{}
 
 -- nvim-cmp
 local cmp = require("cmp")
