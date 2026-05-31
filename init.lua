@@ -213,17 +213,13 @@ require("hop").setup{}
 vim.api.nvim_set_keymap("", "<leader><leader>", ":HopWord<CR>", { noremap = true, silent = true })
 
 -- Telescope
-require("telescope").setup{}
-require("telescope").load_extension("file_browser")
-vim.api.nvim_set_keymap("n", "<Leader>f", "", {
-    noremap = true,
-    silent = true,
-    callback = function()
-        local opts = {}
-        local ok = pcall(require("telescope.builtin").git_files, opts)
-        if not ok then require("telescope.builtin").find_files(opts) end
-    end
-})
+local telescope = require("telescope")
+telescope.setup{}
+telescope.load_extension("file_browser")
+vim.keymap.set("n", "f", function()
+    local builtin = require("telescope.builtin")
+    if not pcall(builtin.git_files) then builtin.find_files() end
+end, { silent = true})
 
 -- Nvim-Tree
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
