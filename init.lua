@@ -78,7 +78,6 @@ Plug "nvim-lualine/lualine.nvim"
 Plug "nvim-mini/mini.icons"
 Plug "lukas-reineke/indent-blankline.nvim"
 Plug "nvim-focus/focus.nvim"
-Plug "jeetsukumaran/vim-buffergator"
 Plug "nxhung2304/lastplace.nvim"
 Plug "kevinhwang91/nvim-hlslens"
 Plug "nvim-lua/plenary.nvim"
@@ -217,10 +216,11 @@ vim.api.nvim_set_keymap("", "<leader><leader>", ":HopWord<CR>", { noremap = true
 local telescope = require("telescope")
 telescope.setup{}
 telescope.load_extension("file_browser")
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "b", builtin.buffers, { silent = true })
 vim.keymap.set("n", "f", function()
-    local builtin = require("telescope.builtin")
     if not pcall(builtin.git_files) then builtin.find_files() end
-end, { silent = true})
+end, { silent = true })
 
 -- Nvim-Tree
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
