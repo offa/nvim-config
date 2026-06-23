@@ -217,8 +217,8 @@ local telescope = require("telescope")
 telescope.setup{}
 telescope.load_extension("file_browser")
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "b", builtin.buffers, { silent = true })
-vim.keymap.set("n", "f", function()
+vim.keymap.set("n", "<Leader>b", builtin.buffers, { silent = true })
+vim.keymap.set("n", "<Leader>f", function()
     if not pcall(builtin.git_files) then builtin.find_files() end
 end, { silent = true })
 
