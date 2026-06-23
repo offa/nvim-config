@@ -87,7 +87,7 @@ Plug "nvim-telescope/telescope-file-browser.nvim"
 Plug "simnalamburt/vim-mundo"
 Plug "smoka7/hop.nvim"
 Plug "luochen1990/rainbow"
-Plug "RRethy/vim-illuminate"
+Plug "nvim-mini/mini.cursorword"
 Plug "nvim-mini/mini.surround"
 Plug "nvim-tree/nvim-tree.lua"
 
@@ -131,6 +131,7 @@ require("hlslens").setup{}
 require("mini.icons").setup()
 require("lastplace").setup{}
 require("focus").setup{}
+require('mini.cursorword').setup{}
 
 -- nvim-cmp
 local cmp = require("cmp")
