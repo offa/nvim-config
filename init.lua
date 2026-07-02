@@ -83,7 +83,6 @@ Plug "kevinhwang91/nvim-hlslens"
 Plug "nvim-lua/plenary.nvim"
 Plug "nvim-telescope/telescope.nvim"
 Plug "nvim-telescope/telescope-file-browser.nvim"
-Plug "simnalamburt/vim-mundo"
 Plug "smoka7/hop.nvim"
 Plug "nvim-mini/mini.cursorword"
 Plug "nvim-mini/mini.surround"
@@ -207,9 +206,6 @@ vim.g.ale_lint_on_insert_leave = 1
 vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true})
 
--- Mundo
-vim.api.nvim_set_keymap("n", "<F5>", ":MundoToggle<CR>", { noremap = true, silent = true })
-
 -- Hop
 require("hop").setup{}
 vim.api.nvim_set_keymap("", "<leader><leader>", ":HopWord<CR>", { noremap = true, silent = true })
@@ -233,4 +229,8 @@ vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 -- Mini Icons
 require("mini.icons").mock_nvim_web_devicons()
+
+-- Undo
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set('n', '<F5>', function() vim.cmd("Undotree") end, { noremap = true, silent = true })
 -- }}
