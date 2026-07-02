@@ -112,9 +112,12 @@ vim.call("plug#end")
 -- }}
 
 
--- Theme {{
+-- UI {{
+require("vim._core.ui2").enable()
+
 vim.opt.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
+vim.diagnostic.config({ virtual_text = true })
 -- }}
 
 
