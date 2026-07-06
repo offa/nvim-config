@@ -135,65 +135,55 @@ require('mini.cursorword').setup{}
 -- nvim-cmp
 local cmp = require("cmp")
 cmp.setup({
-        snippet = {
-            expand = function(args)
-                vim.fn["UltiSnips#Anon"](args.body)
-            end,
-        },
-        mapping = cmp.mapping.preset.insert({
-                ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-n>"] = cmp.mapping.select_next_item(),
-                ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-e>"] = cmp.mapping.close(),
-                ["<CR>"] = cmp.mapping.confirm({
-                        behavior = cmp.ConfirmBehavior.Replace,
-                        select = true,
-                    }),
-                ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-                ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
-            }),
-        sources = cmp.config.sources({
-                { name = "nvim_lsp" },
-                { name = "ultisnips" },
-                { name = "nvim_lsp_signature_help" }
-            }, {
-                { name = "buffer" },
-            })
+    snippet = {
+        expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body)
+        end,
+    },
+    mapping = cmp.mapping.preset.insert({
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.close(),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
+        ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+    }),
+    sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "ultisnips" },
+        { name = "nvim_lsp_signature_help" }
+    }, {
+        { name = "buffer" },
     })
+})
 
 -- Set configuration for specific file type
 cmp.setup.filetype("gitcommit", {
-        sources = cmp.config.sources({
-                { name = "buffer" },
-            })
-    })
+    sources = cmp.config.sources({{ name = "buffer" }})
+})
 
 -- Use buffer source for `/`
 cmp.setup.cmdline("/", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-            { name = "buffer" }
-        }
-    })
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {{ name = "buffer" }}
+})
 
 -- Use cmdline & path source for ":"
 cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-                { name = "path" }
-            }, {
-                { name = "cmdline" }
-            })
-    })
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({{ name = "path" }}, {{ name = "cmdline" }})
+})
 
 -- Setup LSP
-vim.lsp.log.set_level("off")
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-vim.lsp.config("*", { capabilities = capabilities })
+vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
 vim.lsp.enable({"clangd", "cmake", "pylsp"})
+vim.lsp.log.set_level("off")
 
 -- ALE
 vim.g.ale_use_neovim_diagnostics_api = 1
