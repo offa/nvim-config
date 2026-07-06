@@ -40,8 +40,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.scrolljump = 5
-vim.opt.scrolloff = 3
+vim.opt.scrolloff = 6
 vim.opt.list = true
 vim.opt.listchars = { trail = "·", tab = "» ", extends = "#", nbsp = "."}
 vim.opt.autochdir = true
