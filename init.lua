@@ -101,7 +101,7 @@ Plug "honza/vim-snippets"
 Plug "dense-analysis/ale"
 Plug "tpope/vim-fugitive"
 Plug "lewis6991/gitsigns.nvim"
-Plug "sbdchd/neoformat"
+Plug "stevearc/conform.nvim"
 Plug "windwp/nvim-autopairs"
 
 vim.call("plug#end")
@@ -220,4 +220,18 @@ require("mini.icons").mock_nvim_web_devicons()
 -- Undo
 vim.cmd("packadd nvim.undotree")
 vim.keymap.set('n', '<F5>', function() vim.cmd("Undotree") end, { noremap = true, silent = true })
+
+-- Conform
+require("conform").setup({
+    formatters_by_ft = {
+        ["_"] = { "trim_whitespace" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
+        python = { "ruff_format", "ruff_organize_imports" },
+    },
+    format_on_save = {
+        timeout_ms = 500,
+        lsp_format = "fallback",
+    },
+})
 -- }}
