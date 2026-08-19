@@ -20,51 +20,49 @@ vim.loader.enable()
 
 vim.g.mapleader = ","
 
-vim.opt.joinspaces = false
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.number = true
-vim.opt.wrap = false
-vim.opt.autoindent = true
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.termguicolors = true
-vim.opt.cursorline = true
-vim.opt.ruler = true
-vim.opt.showcmd = true
-vim.opt.showmode = true
-vim.opt.showmatch = true
-vim.opt.signcolumn = "yes"
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.scrolloff = 6
-vim.opt.list = true
-vim.opt.listchars = { trail = "·", tab = "» ", extends = "#", nbsp = "."}
-vim.opt.autochdir = true
-vim.opt.virtualedit = "onemore"
-vim.opt.history = 1000
-vim.opt.spell = true
-vim.opt.hidden = true
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.swapfile = false
-vim.opt.undofile = true
-vim.opt.undolevels = 1000
-vim.opt.undoreload = 10000
-vim.opt.clipboard = "unnamedplus"
-vim.opt.mouse = "a"
-vim.opt.mousehide = true
-vim.opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
-vim.opt.updatetime = 300
--- }}
-
--- Directories {{
 local dataPath = vim.fn.stdpath("data")
-vim.opt.undodir = dataPath .. "/undo"
-vim.opt.viewdir = dataPath .. "/views"
+
+-- Options
+local opt = vim.opt
+opt.joinspaces = false
+opt.splitright = true
+opt.splitbelow = true
+opt.number = true
+opt.wrap = false
+opt.autoindent = true
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.termguicolors = true
+opt.cursorline = true
+opt.showcmd = true
+opt.showmode = true
+opt.showmatch = true
+opt.signcolumn = "yes"
+opt.hlsearch = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.scrolloff = 6
+opt.list = true
+opt.listchars = { trail = "·", tab = "» ", extends = "#", nbsp = "."}
+opt.autochdir = true
+opt.virtualedit = "onemore"
+opt.history = 1000
+opt.spell = true
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
+opt.undofile = true
+opt.undolevels = 1000
+opt.undoreload = 10000
+opt.clipboard = "unnamedplus"
+opt.mouse = "a"
+opt.mousehide = true
+opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
+opt.updatetime = 300
+opt.undodir = dataPath .. "/undo"
+opt.viewdir = dataPath .. "/views"
 -- }}
 
 -- Plugins {{
