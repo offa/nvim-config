@@ -70,6 +70,7 @@ local Plug = vim.fn["plug#"]
 vim.call("plug#begin", dataPath .. "/plugged")
 
 -- General
+Plug "rmehri01/onenord.nvim"
 Plug "ellisonleao/gruvbox.nvim"
 Plug "nvim-lualine/lualine.nvim"
 Plug "nvim-mini/mini.icons"
@@ -112,7 +113,7 @@ vim.call("plug#end")
 require("vim._core.ui2").enable()
 
 vim.opt.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme onenord]])
 vim.diagnostic.config({ virtual_text = true })
 -- }}
 
