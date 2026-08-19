@@ -192,12 +192,12 @@ vim.g.ale_lint_on_text_changed = "normal"
 vim.g.ale_lint_on_insert_leave = 1
 
 -- Fugitive
-vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true})
+vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
+vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true})
 
 -- Hop
 require("hop").setup{}
-vim.api.nvim_set_keymap("", "<leader><leader>", ":HopWord<CR>", { noremap = true, silent = true })
+vim.keymap.set("", "<leader><leader>", ":HopWord<CR>", { noremap = true, silent = true })
 
 -- Telescope
 local telescope = require("telescope")
@@ -210,7 +210,7 @@ vim.keymap.set("n", "<Leader>f", function()
 end, { silent = true })
 
 -- Nvim-Tree
-vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
 
 -- UltiSnips
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
