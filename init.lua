@@ -19,7 +19,7 @@ vim.loader.enable()
 
 vim.g.mapleader = ","
 
-local dataPath = vim.fn.stdpath("data")
+local datapath = vim.fn.stdpath("data")
 
 -- Options
 local opt = vim.opt
@@ -58,11 +58,11 @@ opt.mouse = "a"
 opt.mousehide = true
 opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 opt.updatetime = 300
-opt.undodir = dataPath .. "/undo"
-opt.viewdir = dataPath .. "/views"
+opt.undodir = datapath .. "/undo"
+opt.viewdir = datapath .. "/views"
 
 -- Bootstrap lazy.nvim
-local lazypath = dataPath .. "/lazy/lazy.nvim"
+local lazypath = datapath .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
     vim.fn.system({
         "git", "clone", "--filter=blob:none",
