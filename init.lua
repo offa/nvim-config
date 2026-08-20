@@ -15,12 +15,11 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
--- Settings {{
 vim.loader.enable()
 
 vim.g.mapleader = ","
 
-local dataPath = vim.fn.stdpath("data")
+local datapath = vim.fn.stdpath("data")
 
 -- Options
 local opt = vim.opt
@@ -59,178 +58,143 @@ opt.mouse = "a"
 opt.mousehide = true
 opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 opt.updatetime = 300
-opt.undodir = dataPath .. "/undo"
-opt.viewdir = dataPath .. "/views"
--- }}
+opt.undodir = datapath .. "/undo"
+opt.viewdir = datapath .. "/views"
 
--- Plugins {{
-local Plug = vim.fn["plug#"]
-vim.call("plug#begin", dataPath .. "/plugged")
-
--- General
-Plug "rmehri01/onenord.nvim"
-Plug "ellisonleao/gruvbox.nvim"
-Plug "nvim-lualine/lualine.nvim"
-Plug "nvim-mini/mini.icons"
-Plug "lukas-reineke/indent-blankline.nvim"
-Plug "nvim-focus/focus.nvim"
-Plug "nxhung2304/lastplace.nvim"
-Plug "kevinhwang91/nvim-hlslens"
-Plug "nvim-lua/plenary.nvim"
-Plug "nvim-telescope/telescope.nvim"
-Plug "nvim-telescope/telescope-file-browser.nvim"
-Plug "smoka7/hop.nvim"
-Plug "nvim-mini/mini.cursorword"
-Plug "nvim-mini/mini.surround"
-Plug "nvim-tree/nvim-tree.lua"
-
--- Completion
-Plug "neovim/nvim-lspconfig"
-Plug "hrsh7th/nvim-cmp"
-Plug "hrsh7th/cmp-nvim-lsp"
-Plug "hrsh7th/cmp-buffer"
-Plug "hrsh7th/cmp-path"
-Plug "hrsh7th/cmp-cmdline"
-Plug "hrsh7th/cmp-nvim-lsp-signature-help"
-Plug "SirVer/ultisnips"
-Plug "quangnguyen30192/cmp-nvim-ultisnips"
-Plug "honza/vim-snippets"
-
--- Programming
-Plug "dense-analysis/ale"
-Plug "tpope/vim-fugitive"
-Plug "lewis6991/gitsigns.nvim"
-Plug "stevearc/conform.nvim"
-Plug "windwp/nvim-autopairs"
-
-vim.call("plug#end")
--- }}
-
-
--- UI {{
-require("vim._core.ui2").enable()
-
-vim.opt.background = "dark"
-vim.cmd([[colorscheme onenord]])
-vim.diagnostic.config({ virtual_text = true })
--- }}
-
-
--- Plugin Settings {{
-require("lualine").setup{}
-require("ibl").setup{}
-require("gitsigns").setup{}
-require("nvim-autopairs").setup{}
-require('mini.surround').setup()
-require("nvim-tree").setup{}
-require("hlslens").setup{}
-require("mini.icons").setup()
-require("lastplace").setup{}
-require("focus").setup{}
-require('mini.cursorword').setup{}
-
--- nvim-cmp
-local cmp = require("cmp")
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.close(),
-        ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
-        ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
-    }),
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "ultisnips" },
-        { name = "nvim_lsp_signature_help" }
-    }, {
-        { name = "buffer" },
+-- Bootstrap lazy.nvim
+local lazypath = datapath .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazypath) then
+    vim.fn.system({
+        "git", "clone", "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath,
     })
-})
+end
+opt.rtp:prepend(lazypath)
 
--- Set configuration for specific file type
-cmp.setup.filetype("gitcommit", {
-    sources = cmp.config.sources({{ name = "buffer" }})
-})
+require("lazy").setup({
+    -- UI & Themes
+    { "rmehri01/onenord.nvim", priority = 1000, config = function() vim.cmd.colorscheme("onenord") end },
+    { "ellisonleao/gruvbox.nvim" },
+    { "nvim-lualine/lualine.nvim", opts = {} },
+    { "nvim-mini/mini.icons", config = function()
+        require("mini.icons").setup()
+        require("mini.icons").mock_nvim_web_devicons()
+    end },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "nvim-focus/focus.nvim", opts = {} },
+    { "nxhung2304/lastplace.nvim", opts = {} },
+    { "kevinhwang91/nvim-hlslens", opts = {} },
+    { "nvim-lua/plenary.nvim" },
 
--- Use buffer source for `/`
-cmp.setup.cmdline("/", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {{ name = "buffer" }}
-})
+    -- Telescope
+    { "nvim-telescope/telescope.nvim",
+      dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
+      keys = {
+          { "<Leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+          { "<Leader>f", function()
+              local builtin = require("telescope.builtin")
+              if not pcall(builtin.git_files) then builtin.find_files() end
+          end, desc = "Find Files" },
+      },
+      config = function()
+          require("telescope").setup{}
+          require("telescope").load_extension("file_browser")
+      end
+    },
 
--- Use cmdline & path source for ":"
-cmp.setup.cmdline(":", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({{ name = "path" }}, {{ name = "cmdline" }})
-})
+    -- Navigation & Editing
+    { "smoka7/hop.nvim",
+      keys = { { "<leader><leader>", "<cmd>HopWord<cr>", desc = "Hop Word" } },
+      opts = {}
+    },
+    { "nvim-mini/mini.cursorword", opts = {} },
+    { "nvim-mini/mini.surround", opts = {} },
+    { "nvim-tree/nvim-tree.lua",
+      keys = { { "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Tree" } },
+      opts = {}
+    },
 
--- Setup LSP
-vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
-vim.lsp.enable({"clangd", "cmake", "pylsp"})
-vim.lsp.log.set_level("off")
+    -- LSP & Completion
+    { "neovim/nvim-lspconfig", config = function()
+        vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
+        vim.lsp.enable({"clangd", "cmake", "pylsp"})
+    end },
+    { "hrsh7th/nvim-cmp",
+      dependencies = {
+          "hrsh7th/cmp-nvim-lsp",
+          "hrsh7th/cmp-buffer",
+          "hrsh7th/cmp-path",
+          "hrsh7th/cmp-cmdline",
+          "hrsh7th/cmp-nvim-lsp-signature-help",
+          "quangnguyen30192/cmp-nvim-ultisnips",
+      },
+      config = function()
+          local cmp = require("cmp")
+          cmp.setup({
+              snippet = { expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end },
+              mapping = cmp.mapping.preset.insert({
+                  ["<C-p>"] = cmp.mapping.select_prev_item(),
+                  ["<C-n>"] = cmp.mapping.select_next_item(),
+                  ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+                  ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                  ["<C-Space>"] = cmp.mapping.complete(),
+                  ["<C-e>"] = cmp.mapping.close(),
+                  ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+                  ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+                  ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+              }),
+              sources = cmp.config.sources({
+                  { name = "nvim_lsp" },
+                  { name = "ultisnips" },
+                  { name = "nvim_lsp_signature_help" }
+              }, {
+                  { name = "buffer" },
+              })
+          })
+          cmp.setup.filetype("gitcommit", { sources = cmp.config.sources({{ name = "buffer" }}) })
+          cmp.setup.cmdline("/", { mapping = cmp.mapping.preset.cmdline(), sources = {{ name = "buffer" }} })
+          cmp.setup.cmdline(":", {
+              mapping = cmp.mapping.preset.cmdline(),
+              sources = cmp.config.sources({{ name = "path" }}, {{ name = "cmdline" }})
+          })
+      end
+    },
+    { "SirVer/ultisnips" },
+    { "honza/vim-snippets" },
 
--- ALE
+    -- Programming
+    { "dense-analysis/ale" },
+    { "tpope/vim-fugitive",
+      keys = {
+          { "<leader>gs", "<cmd>Git<cr>", desc = "Git" },
+          { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git Commit" },
+      }
+    },
+    { "lewis6991/gitsigns.nvim", opts = {} },
+    { "stevearc/conform.nvim", opts = {
+        formatters_by_ft = {
+            ["_"] = { "trim_whitespace" },
+            c = { "clang-format" },
+            cpp = { "clang-format" },
+            python = { "ruff_format", "ruff_organize_imports" },
+        },
+        format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
+    }},
+    { "windwp/nvim-autopairs", opts = {} },
+}, { checker = { enabled = false } })
+
+-- UI
+require("vim._core.ui2").enable()
+opt.background = "dark"
+vim.diagnostic.config({ virtual_text = true })
+
+-- Plugin settings
 vim.g.ale_use_neovim_diagnostics_api = 1
 vim.g.ale_disable_lsp = 1
 vim.g.ale_lint_on_text_changed = "normal"
 vim.g.ale_lint_on_insert_leave = 1
-
--- Fugitive
-vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { noremap = true, silent = true})
-
--- Hop
-require("hop").setup{}
-vim.keymap.set("", "<leader><leader>", ":HopWord<CR>", { noremap = true, silent = true })
-
--- Telescope
-local telescope = require("telescope")
-telescope.setup{}
-telescope.load_extension("file_browser")
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<Leader>b", builtin.buffers, { silent = true })
-vim.keymap.set("n", "<Leader>f", function()
-    if not pcall(builtin.git_files) then builtin.find_files() end
-end, { silent = true })
-
--- Nvim-Tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", { noremap = true, silent = true })
-
--- UltiSnips
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
 
--- Mini Icons
-require("mini.icons").mock_nvim_web_devicons()
-
--- Undo
 vim.cmd("packadd nvim.undotree")
-vim.keymap.set('n', '<F5>', function() vim.cmd("Undotree") end, { noremap = true, silent = true })
-
--- Conform
-require("conform").setup({
-    formatters_by_ft = {
-        ["_"] = { "trim_whitespace" },
-        c = { "clang-format" },
-        cpp = { "clang-format" },
-        python = { "ruff_format", "ruff_organize_imports" },
-    },
-    format_on_save = {
-        timeout_ms = 500,
-        lsp_format = "fallback",
-    },
-})
--- }}
+vim.keymap.set('n', '<F5>', "<cmd>Undotree<cr>", { silent = true })
