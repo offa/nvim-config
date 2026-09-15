@@ -88,9 +88,10 @@ require("lazy").setup({
 
     -- Telescope
     { "nvim-telescope/telescope.nvim",
+      cmd = { "Telescope" },
       dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
       keys = {
-          { "<Leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+          { "<Leader>b", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
           { "<Leader>f", function()
               local builtin = require("telescope.builtin")
               if not pcall(builtin.git_files) then builtin.find_files() end
@@ -104,13 +105,13 @@ require("lazy").setup({
 
     -- Navigation & Editing
     { "smoka7/hop.nvim",
-      keys = { { "<leader><leader>", "<cmd>HopWord<cr>", desc = "Hop Word" } },
+      keys = { { "<leader><leader>", "<cmd>HopWord<CR>", desc = "Hop Word" } },
       opts = {}
     },
     { "nvim-mini/mini.cursorword", opts = {} },
     { "nvim-mini/mini.surround", opts = {} },
     { "nvim-tree/nvim-tree.lua",
-      keys = { { "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Tree" } },
+      keys = { { "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", desc = "Tree" } },
       opts = {}
     },
 
@@ -172,7 +173,7 @@ require("lazy").setup({
         },
         cmd = "Neogit",
         keys = {
-            { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+            { "<leader>gg", "<cmd>Neogit<CR>", desc = "Show Neogit UI" }
         }
     },
     { "lewis6991/gitsigns.nvim", opts = {} },
@@ -202,4 +203,4 @@ vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 vim.cmd("packadd nvim.undotree")
-vim.keymap.set('n', '<F5>', "<cmd>Undotree<cr>", { silent = true })
+vim.keymap.set('n', '<F5>', "<cmd>Undotree<CR>", { silent = true })
