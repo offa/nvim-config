@@ -164,11 +164,16 @@ require("lazy").setup({
 
     -- Programming
     { "dense-analysis/ale" },
-    { "tpope/vim-fugitive",
-      keys = {
-          { "<leader>gs", "<cmd>Git<cr>", desc = "Git" },
-          { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git Commit" },
-      }
+    { "NeogitOrg/neogit",
+        lazy = true,
+        dependencies = {
+            "sindrets/diffview.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        cmd = "Neogit",
+        keys = {
+            { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+        }
     },
     { "lewis6991/gitsigns.nvim", opts = {} },
     { "stevearc/conform.nvim", opts = {
